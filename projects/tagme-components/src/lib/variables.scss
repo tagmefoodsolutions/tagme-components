@@ -1,0 +1,47 @@
+// Global variables
+
+// Colors
+$green: #71C879;
+$main-orange: #FD7F3D;
+$white: #FFFFFF;
+
+// Fonts Configs
+$main-font-family: 'Open Sans' sans-serif;
+$mono-font-family: 'PT Mono' monospace;
+
+$font-size-1x: 12px#{'/'}14px;
+$font-size-2x: 14px#{'/'}18px;
+$font-size-3x: 16px#{'/'}20px;
+$font-size-4x: 20px#{'/'}24px;
+$font-size-5x: 34px#{'/'}42px;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Main fonts
+$main-font-1x-light: $font-weight-light $font-size-1x $main-font-family;
+$main-font-1x-light-italic: italic $main-font-1x-light;
+$main-font-1x-regular: $font-weight-regular $font-size-1x $main-font-family;
+$main-font-1x-semibold: $font-weight-semibold $font-size-1x $main-font-family;
+$main-font-1x-semibold-underline: underline $main-font-1x-semibold;
+
+$main-font-2x-light: $font-weight-light $font-size-2x $main-font-family;
+$main-font-2x-light-italic: italic $main-font-2x-light;
+$main-font-2x-regular: $font-weight-regular $font-size-2x $main-font-family;
+$main-font-2x-semibold: $font-weight-semibold$font-size-2x $main-font-family;
+$main-font-2x-semibold-underline: underline $main-font-2x-semibold;
+
+$main-font-3x-semibold: $font-weight-semibold $font-size-3x $main-font-family;
+
+$main-font-4x-semibold: $font-weight-semibold $font-size-4x $main-font-family;
+
+$main-font-5x-regular: $font-weight-regular $font-size-5x $main-font-family;
+
+// Mono fonts
+$mono-font-1x-regular: $font-weight-regular $font-size-1x $mono-font-family;
+$mono-font-1x-bold: $font-weight-regular $font-size-1x $mono-font-family;
+
+$mono-font-3x-regular: $font-weight-regular $font-size-3x $mono-font-family;
+$mono-font-3x-bold: $font-weight-bold $font-size-3x $mono-font-family;
