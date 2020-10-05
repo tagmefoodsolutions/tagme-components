@@ -1,0 +1,22 @@
+<button
+	class="button"
+	(click)="emitClick()"
+	[ngClass]="{
+		'button--main': type === 'main',
+		'button--main--disabled': type === 'main' && disabled,
+		'button--success': type === 'success',
+		'button--success--disabled': type === 'success' && disabled,
+		'button--outline-main': type === 'outline-main',
+		'button--outline-main--disabled': type === 'outline-main' && disabled,
+		'button--outline-success': type === 'outline-success',
+		'button--outline-success--disabled': type === 'outline-success' && disabled,
+		'button--white': type === 'white',
+		'button--white--disabled': type === 'white' && disabled,
+		'button--black': type === 'black',
+		'button--black--disabled': type === 'black' && disabled,
+		'button--small': small
+	}"
+	[style]="customStyles"
+>
+	{{ text }}
+</button>

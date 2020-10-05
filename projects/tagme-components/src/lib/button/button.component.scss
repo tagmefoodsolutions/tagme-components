@@ -1,6 +1,82 @@
 @import '../global.scss';
 
-button {
-	background-color: $main-orange;
+.button {
+	border: none;
+	border-radius: 3px;
 	font: $main-font-2x-semibold;
+	padding: 14px 0;
+	width: 100%;
+
+	&--main {
+		background-color: $main-orange;
+		color: $white;
+
+		&--disabled {
+			background-color: $medium-orange;
+			cursor: not-allowed;
+		}
+	}
+
+	&--success {
+		background-color: $green;
+		color: $white;
+
+		&--disabled {
+			background-color: $medium-green;
+			cursor: not-allowed;
+		}
+	}
+
+	&--outline-main {
+		background-color: transparent;
+		border: 2px solid $main-orange;
+		box-sizing: border-box;
+		color: $main-orange;
+
+		&--disabled {
+			border-color: $medium-orange;
+			color: $medium-orange;
+			cursor: not-allowed;
+		}
+	}
+
+	&--outline-success {
+		background-color: transparent;
+		border: 2px solid $green;
+		box-sizing: border-box;
+		color: $green;
+
+		&--disabled {
+			border-color: $medium-green;
+			color: $medium-green;
+			cursor: not-allowed;
+		}
+	}
+
+	&--white {
+		background-color: $white;
+		border: 1px solid $medium-gray;
+		box-sizing: border-box;
+		color: $black;
+
+		&--disabled {
+			border-color: $light-gray;
+			color: $gray;
+			cursor: not-allowed;
+		}
+	}
+
+	&--black {
+		background-color: $black;
+		color: $white;
+
+		&--disabled {
+			background-color: $medium-gray;
+			color: $white;
+		}
+	}
+
+	&--small {
+		padding: 6px 0;
+	}
 }
