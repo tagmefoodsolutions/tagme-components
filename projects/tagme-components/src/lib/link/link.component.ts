@@ -1,0 +1,31 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+	selector: 'tg-link',
+	templateUrl: './link.component.html',
+	styleUrls: ['./link.component.scss']
+})
+export class LinkComponent {
+	// Injects a style in the property style
+	@Input() customStyles: string;
+	// (Optional) Query params of the link
+	@Input() queryParams?: {
+		[k: string]: any;
+	};
+	// Destination of the link
+	@Input() routerLink: string | any[];
+	// (Optional) State for the destination
+	@Input() state?: {
+		[k: string]: any;
+	};
+	// Text of the link
+	@Input() text: string;
+	// Type of the link. It can be:
+	// default
+	// default-underline
+	// small
+	// small-underline
+	// button
+	// small button
+	@Input() type: string = 'default';
+}

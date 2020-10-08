@@ -1,0 +1,37 @@
+@import '../global.scss';
+
+.link {
+	color: $main-orange;
+	text-decoration: none;
+
+	&--default {
+		font: $main-font-2x-semibold;
+
+		&--underline {
+			text-decoration: underline;
+		}
+	}
+
+	&--small {
+		font: $main-font-1x-semibold;
+
+		&--underline {
+			text-decoration: underline;
+		}
+	}
+
+	&--button {
+		border: 1px solid $medium-gray;
+		box-sizing: border-box;
+		border-radius: 3px;
+		display: block;
+		font: $main-font-2x-semibold;
+		padding: 14px 0;
+		text-align: center;
+
+		&--small {
+			font: $main-font-2x-regular;
+			padding: 6px 0;
+		}
+	}
+}

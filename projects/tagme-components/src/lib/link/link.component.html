@@ -1,0 +1,17 @@
+<a
+	class="link"
+	[ngClass]="{
+		'link--default': type === 'default' || type === 'default-underline',
+		'link--default--underline': type === 'default-underline',
+		'link--small': type === 'small' || type === 'small-underline',
+		'link--small--underline': type === 'small-underline',
+		'link--button': type === 'button' || type === 'small-button',
+		'link--button--small': type === 'small-button'
+	}"
+	[queryParams]="queryParams" 
+	[routerLink]="routerLink" 
+	[state]="state"
+	[style]="customStyles"
+>
+	{{ text }}
+</a>

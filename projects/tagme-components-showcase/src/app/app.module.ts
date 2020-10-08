@@ -4,13 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { ButtonModule } from 'tagme-components';
-import { CounterModule } from 'tagme-components';
-import { IconModule } from 'tagme-components';
+import { ButtonModule, CounterModule, IconModule, LinkModule } from 'tagme-components';
 
 import { ButtonsComponent } from './pages/buttons/buttons.component';
 import { CountersComponent } from './pages/counters/counters.component';
 import { IconsComponent } from './pages/icons/icons.component';
+import { LinksComponents } from './pages/links/links.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +17,7 @@ import { IconsComponent } from './pages/icons/icons.component';
     ButtonsComponent,
     CountersComponent,
     IconsComponent,
+    LinksComponents,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +25,7 @@ import { IconsComponent } from './pages/icons/icons.component';
     ButtonModule,
     CounterModule,
     IconModule,
+    LinkModule
   ],
   providers: [],
   bootstrap: [AppComponent]
