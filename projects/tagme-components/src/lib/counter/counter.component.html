@@ -1,0 +1,31 @@
+<div class="counter">
+	<tg-icon
+		class="counter__icon"
+		(click)="subtract(); emitValue()"
+		color="{{ disabled || value === min ? '#EAEAEA' : color }}"
+		name="minus_24"
+		*ngIf="value !== min + 1"
+		[ngClass]="{ 'counter__icon--disabled': value === min }"
+	></tg-icon>
+	<tg-icon
+		class="counter__icon"
+		(click)="subtract(); emitValue()"
+		color="{{ disabled ? '#EAEAEA' : color }}"
+		name="trash_24"
+		*ngIf="value === min + 1"
+	></tg-icon>
+	<div
+		class="counter__value"
+		[ngClass]="{ 
+			'counter__value--big': big,
+			'counter__value--colorized':  value > min
+		}"
+	>{{ value }}</div>
+	<tg-icon
+		class="counter__icon"
+		(click)="add(); emitValue()"
+		color="{{ disabled || value === max ? '#EAEAEA' : color }}"
+		name="plus_24"
+		[ngClass]="{ 'counter__icon--disabled': value === max }"
+	></tg-icon>
+</div>

@@ -1,0 +1,38 @@
+@import '../global.scss';
+
+.counter {
+	background-color: $white;
+	border: 1px solid $medium-gray;
+  border-radius: 3px;
+	box-sizing: border-box;
+	display: flex;
+
+	&__icon {
+		align-items: center;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		min-width: 30px;
+
+		&--disabled {
+			cursor: not-allowed;
+		}
+	}
+
+	&__value {
+		border-left: 1px solid $medium-gray;
+		border-right: 1px solid $medium-gray;
+		flex: 1;
+		font: $main-font-2x-regular;
+		padding: 6px 0;
+		text-align: center;
+
+		&--colorized {
+			background-color: $light-golden;
+		}
+
+		&--big {
+			padding: 14px 0;
+		}
+	}
+}
