@@ -9,7 +9,7 @@ export class CounterComponent {
 	// Increases the height of the component
 	@Input() big: boolean = false;
 	// Changes the color of icons
-	@Input() color: string = '#FD7F3D';
+	@Input() color: string = '#FF7F40';
 	// Turn off the component
 	@Input() disabled: boolean = false;
 	// Sets the max value of the counter

@@ -13,3 +13,6 @@ export * from './lib/icon/icon.component';
 
 export * from './lib/link/link.module';
 export * from './lib/link/link.component';
+
+export * from './lib/badge/badge.module';
+export * from './lib/badge/badge.component';

@@ -15,7 +15,6 @@ export default {
 	],
 	argTypes: {
 		color: { control: 'color' },
-
   },
 }
 
@@ -26,7 +25,7 @@ const Template = (args: CounterComponent) => ({
 
 export const Default = Template.bind({})
 Default.args = {
-	color: '#FD7F3D',
+	color: '#FF7F40',
 	big: false,
 	disabled: false,
 	max: 99,

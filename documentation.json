@@ -6,105 +6,38 @@
     "directives": [],
     "components": [
         {
-            "name": "AppComponent",
-            "id": "component-AppComponent-27e872b0af0680ed20a3dbf586b900e4",
-            "file": "projects/tagme-components-showcase/src/app/app.component.ts",
+            "name": "BadgeComponent",
+            "id": "component-BadgeComponent-53f2bc20cc2d4f5e953a969fb3a71a78",
+            "file": "projects/tagme-components/src/lib/badge/badge.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-root",
+            "selector": "tg-badge",
             "styleUrls": [
-                "./app.component.scss"
+                "./badge.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./app.component.html"
+                "./badge.component.html"
             ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "title",
-                    "defaultValue": "'tagme-components-showcase'",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 9
-                }
-            ],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'tagme-components-showcase';\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".component {\n\tdisplay: block;\n\tmargin-bottom: 10px;\n}",
-                    "styleUrl": "./app.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "templateData": "<router-outlet></router-outlet>"
-        },
-        {
-            "name": "ButtonComponent",
-            "id": "component-ButtonComponent-642c6c4e474cd5a0ac760dfda26b2fc9",
-            "file": "stories/button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-button",
-            "styleUrls": [
-                "./button.css"
-            ],
-            "styles": [],
-            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
-            "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
                 {
                     "name": "backgroundColor",
-                    "description": "<p>What background color to use</p>\n",
-                    "line": 26,
+                    "description": "<p>Background color</p>\n",
+                    "line": 12,
                     "type": "string"
                 },
                 {
-                    "name": "label",
-                    "defaultValue": "'Button'",
-                    "description": "<p>Button contents</p>\n",
-                    "line": 40
-                },
-                {
-                    "name": "primary",
-                    "defaultValue": "false",
-                    "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 20
-                },
-                {
-                    "name": "size",
-                    "defaultValue": "'medium'",
-                    "description": "<p>How large should the button be?</p>\n",
-                    "line": 32,
-                    "type": "\"small\" | \"medium\" | \"large\""
+                    "name": "text",
+                    "description": "<p>Text of the badge</p>\n",
+                    "line": 17,
+                    "type": "string"
                 }
             ],
-            "outputsClass": [
-                {
-                    "name": "onClick",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "description": "<p>Optional click handler</p>\n",
-                    "line": 46,
-                    "type": "EventEmitter"
-                }
-            ],
+            "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
             "hostBindings": [],
@@ -112,30 +45,20 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n\tselector: 'tg-badge',\n\ttemplateUrl: './badge.component.html',\n\tstyleUrls: ['./badge.component.scss'],\n})\nexport class BadgeComponent {\n\t/**\n\t * Background color\n\t */\n\t@Input() backgroundColor: string;\n\n\t/**\n\t * Text of the badge\n\t */\n\t@Input() text: string;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
-                    "styleUrl": "./button.css"
+                    "data": "@import '../global.scss';\n\n.badge {\n\tbackground-color: $main-orange;\n\tborder-radius: 3px;\n\tcolor: $white;\n\tfont: $main-font-2x-regular;\n\tpadding: 2px;\n\ttext-align: center;\n}",
+                    "styleUrl": "./badge.component.scss"
                 }
             ],
             "stylesData": "",
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 48
-                    }
-                }
-            }
+            "templateData": "<span \n\tclass=\"badge\" \n\t[ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n\t{{ text }}\n</span>"
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-b3935643b1e142ba802b55b102b480e9-1",
+            "id": "component-ButtonComponent-b3935643b1e142ba802b55b102b480e9",
             "file": "projects/tagme-components/src/lib/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -217,48 +140,7 @@
                 }
             ],
             "stylesData": "",
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "ButtonComponent-1",
             "templateData": "<button\n\tclass=\"button\"\n\t(click)=\"emitClick()\"\n\t[ngClass]=\"{\n\t\t'button--main': type === 'main',\n\t\t'button--main--disabled': type === 'main' && disabled,\n\t\t'button--success': type === 'success',\n\t\t'button--success--disabled': type === 'success' && disabled,\n\t\t'button--outline-main': type === 'outline-main',\n\t\t'button--outline-main--disabled': type === 'outline-main' && disabled,\n\t\t'button--outline-success': type === 'outline-success',\n\t\t'button--outline-success--disabled': type === 'outline-success' && disabled,\n\t\t'button--white': type === 'white',\n\t\t'button--white--disabled': type === 'white' && disabled,\n\t\t'button--black': type === 'black',\n\t\t'button--black--disabled': type === 'black' && disabled,\n\t\t'button--small': small\n\t}\"\n\t[style]=\"customStyles\"\n>\n\t{{ text }}\n</button>"
-        },
-        {
-            "name": "ButtonsComponent",
-            "id": "component-ButtonsComponent-c4dc5df1c87522d5809c9a4e19825eb8",
-            "file": "projects/tagme-components-showcase/src/app/pages/buttons/buttons.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-buttons",
-            "styleUrls": [
-                "../../app.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./buttons.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n\tselector: 'app-buttons',\n\ttemplateUrl: './buttons.component.html',\n\tstyleUrls: ['../../app.component.scss']\n})\nexport class ButtonsComponent {}",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".component {\n\tdisplay: block;\n\tmargin-bottom: 10px;\n}",
-                    "styleUrl": "../../app.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "templateData": "<tg-button \n\tclass=\"component\"\n\ttext=\"Botão padrão\"\n></tg-button>\n<tg-button \n\tclass=\"component\"\n\t[disabled]=\"true\"\n\ttext=\"Botão padrão desabilitado\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[small]=\"true\"\n\ttext=\"Botão pequeno\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[disabled]=\"true\"\n\t[small]=\"true\"\n\ttext=\"Botão pequeno desabilitado\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\ttext=\"Botão de sucesso\"\n\ttype=\"success\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[disabled]=\"true\"\n\ttext=\"Botão de sucesso desabilitado\"\n\ttype=\"success\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[small]=\"true\"\n\ttext=\"Botão de sucesso pequeno\"\n\ttype=\"success\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[disabled]=\"true\"\n\t[small]=\"true\"\n\ttext=\"Botão de sucesso pequeno desabilitado\"\n\ttype=\"success\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\ttext=\"Botão outline\"\n\ttype=\"outline-main\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[disabled]=\"true\"\n\ttext=\"Botão outline desabilitado\"\n\ttype=\"outline-main\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[small]=\"true\"\n\ttext=\"Botão outline pequeno\"\n\ttype=\"outline-main\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[disabled]=\"true\"\n\t[small]=\"true\"\n\ttext=\"Botão outline pequeno desabilitado\"\n\ttype=\"outline-main\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\ttext=\"Botão outline de sucesso\"\n\ttype=\"outline-success\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[disabled]=\"true\"\n\ttext=\"Botão outline de sucesso desabilitado\"\n\ttype=\"outline-success\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[small]=\"true\"\n\ttext=\"Botão outline de sucesso pequeno\"\n\ttype=\"outline-success\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[disabled]=\"true\"\n\t[small]=\"true\"\n\ttext=\"Botão outline de sucesso pequeno desabilitado\"\n\ttype=\"outline-success\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\ttext=\"Botão preto\"\n\ttype=\"black\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[disabled]=\"true\"\n\ttext=\"Botão preto desabilitado\"\n\ttype=\"black\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[small]=\"true\"\n\ttext=\"Botão preto pequeno\"\n\ttype=\"black\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[disabled]=\"true\"\n\t[small]=\"true\"\n\ttext=\"Botão preto pequeno desabilitado\"\n\ttype=\"black\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\ttext=\"Botão branco\"\n\ttype=\"white\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[disabled]=\"true\"\n\ttext=\"Botão branco desabilitado\"\n\ttype=\"white\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[small]=\"true\"\n\ttext=\"Botão branco pequeno\"\n\ttype=\"white\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\t[disabled]=\"true\"\n\t[small]=\"true\"\n\ttext=\"Botão branco pequeno desabilitado\"\n\ttype=\"white\"\n></tg-button>\n<tg-button\n\tclass=\"component\"\n\tcustomStyles=\"background-color: red; text-decoration: underline; font-style: italic\"\n\ttext=\"Botão com estilo customizado\"\n></tg-button>"
         },
         {
             "name": "CounterComponent",
@@ -287,7 +169,7 @@
                 },
                 {
                     "name": "color",
-                    "defaultValue": "'#FD7F3D'",
+                    "defaultValue": "'#FF7F40'",
                     "line": 12,
                     "type": "string"
                 },
@@ -365,7 +247,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n\tselector: 'tg-counter',\n\ttemplateUrl: './counter.component.html',\n\tstyleUrls: ['./counter.component.scss'],\n})\nexport class CounterComponent {\n\t// Increases the height of the component\n\t@Input() big: boolean = false;\n\t// Changes the color of icons\n\t@Input() color: string = '#FD7F3D';\n\t// Turn off the component\n\t@Input() disabled: boolean = false;\n\t// Sets the max value of the counter\n\t@Input() max: number = 99;\n\t// Sets the min value of the counter\n\t@Input() min: number = 0;\n\t// Sets the default value of the counter\n\t@Input() value: number = 0;\n\n\t// Emitter of the value\n\t@Output() valueEmitter: EventEmitter<number> = new EventEmitter<number>();\n\n\t// Adds 1 to the value if it's not disabled and it's less than the max\n\tpublic add(): void {\n\t\tif (!this.disabled && this.value < this.max) {\n\t\t\tthis.value++;\n\t\t}\n\t}\n\n\t// Subtracts 1 to the value if it's not disabled and it's grater than the min\n\tpublic subtract(): void {\n\t\tif (!this.disabled && this.value > this.min) {\n\t\t\tthis.value--;\n\t\t}\n\t}\n\n\t// Emits the value\n\tpublic emitValue(): void {\n\t\tthis.valueEmitter.emit(this.value);\n\t}\n}",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n\tselector: 'tg-counter',\n\ttemplateUrl: './counter.component.html',\n\tstyleUrls: ['./counter.component.scss'],\n})\nexport class CounterComponent {\n\t// Increases the height of the component\n\t@Input() big: boolean = false;\n\t// Changes the color of icons\n\t@Input() color: string = '#FF7F40';\n\t// Turn off the component\n\t@Input() disabled: boolean = false;\n\t// Sets the max value of the counter\n\t@Input() max: number = 99;\n\t// Sets the min value of the counter\n\t@Input() min: number = 0;\n\t// Sets the default value of the counter\n\t@Input() value: number = 0;\n\n\t// Emitter of the value\n\t@Output() valueEmitter: EventEmitter<number> = new EventEmitter<number>();\n\n\t// Adds 1 to the value if it's not disabled and it's less than the max\n\tpublic add(): void {\n\t\tif (!this.disabled && this.value < this.max) {\n\t\t\tthis.value++;\n\t\t}\n\t}\n\n\t// Subtracts 1 to the value if it's not disabled and it's grater than the min\n\tpublic subtract(): void {\n\t\tif (!this.disabled && this.value > this.min) {\n\t\t\tthis.value--;\n\t\t}\n\t}\n\n\t// Emits the value\n\tpublic emitValue(): void {\n\t\tthis.valueEmitter.emit(this.value);\n\t}\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -375,106 +257,6 @@
             ],
             "stylesData": "",
             "templateData": "<div class=\"counter\">\n\t<tg-icon\n\t\tclass=\"counter__icon\"\n\t\t(click)=\"subtract(); emitValue()\"\n\t\tcolor=\"{{ disabled || value === min ? '#EAEAEA' : color }}\"\n\t\tname=\"minus_24\"\n\t\t*ngIf=\"value !== min + 1\"\n\t\t[ngClass]=\"{ 'counter__icon--disabled': value === min }\"\n\t></tg-icon>\n\t<tg-icon\n\t\tclass=\"counter__icon\"\n\t\t(click)=\"subtract(); emitValue()\"\n\t\tcolor=\"{{ disabled ? '#EAEAEA' : color }}\"\n\t\tname=\"trash_24\"\n\t\t*ngIf=\"value === min + 1\"\n\t></tg-icon>\n\t<div\n\t\tclass=\"counter__value\"\n\t\t[ngClass]=\"{ \n\t\t\t'counter__value--big': big,\n\t\t\t'counter__value--colorized':  value > min\n\t\t}\"\n\t>{{ value }}</div>\n\t<tg-icon\n\t\tclass=\"counter__icon\"\n\t\t(click)=\"add(); emitValue()\"\n\t\tcolor=\"{{ disabled || value === max ? '#EAEAEA' : color }}\"\n\t\tname=\"plus_24\"\n\t\t[ngClass]=\"{ 'counter__icon--disabled': value === max }\"\n\t></tg-icon>\n</div>\n"
-        },
-        {
-            "name": "CountersComponent",
-            "id": "component-CountersComponent-537b6805563c96f6c16c63b4cf25d4dc",
-            "file": "projects/tagme-components-showcase/src/app/pages/counters/counters.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-counters",
-            "styleUrls": [
-                "../../app.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./counters.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n\tselector: 'app-counters',\n\ttemplateUrl: './counters.component.html',\n\tstyleUrls: ['../../app.component.scss']\n})\nexport class CountersComponent {}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".component {\n\tdisplay: block;\n\tmargin-bottom: 10px;\n}",
-                    "styleUrl": "../../app.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "templateData": "<tg-counter\n\tclass=\"component\"\n\tcolor=\"#FD7F3D\"\n></tg-counter>\n<tg-counter\n\t[big]=\"true\"\n\tclass=\"component\"\n\tcolor=\"#FD7F3D\"\n></tg-counter>"
-        },
-        {
-            "name": "HeaderComponent",
-            "id": "component-HeaderComponent-246e2a69dc126a3bd76c6328dd3b93e2",
-            "file": "stories/header.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-header",
-            "styleUrls": [
-                "./header.css"
-            ],
-            "styles": [],
-            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          primary\n          size=\"small\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </header>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "user",
-                    "defaultValue": "null",
-                    "line": 53,
-                    "type": "unknown"
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onCreateAccount",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 62,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogin",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 56,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogout",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 59,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          primary\n          size=\"small\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n",
-                    "styleUrl": "./header.css"
-                }
-            ],
-            "stylesData": ""
         },
         {
             "name": "IconComponent",
@@ -641,46 +423,8 @@
             "templateData": "<ng-content></ng-content>"
         },
         {
-            "name": "IconsComponent",
-            "id": "component-IconsComponent-27f8a96253f3945f7002a4a485dd6c7c",
-            "file": "projects/tagme-components-showcase/src/app/pages/icons/icons.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-icons",
-            "styleUrls": [
-                "../../app.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./icons.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n\tselector: 'app-icons',\n\ttemplateUrl: './icons.component.html',\n\tstyleUrls: ['../../app.component.scss']\n})\nexport class IconsComponent {}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".component {\n\tdisplay: block;\n\tmargin-bottom: 10px;\n}",
-                    "styleUrl": "../../app.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "templateData": "<tg-icon\n\tclass=\"component\"\n\tname=\"plus_24\"\n></tg-icon>\n<tg-icon\n\tclass=\"component\"\n\tcolor=\"#FD7F3D\"\n\tname=\"plus_24\"\n></tg-icon>\n<tg-icon\n\tclass=\"component\"\n\tname=\"minus_24\"\n></tg-icon>\n<tg-icon\n\tclass=\"component\"\n\tcolor=\"#FD7F3D\"\n\tname=\"minus_24\"\n></tg-icon>\n<tg-icon\n\tclass=\"component\"\n\tname=\"trash_24\"\n></tg-icon>"
-        },
-        {
             "name": "LinkComponent",
-            "id": "component-LinkComponent-7dd5ec4e12e2d8a2258bb4dee4304f3d",
+            "id": "component-LinkComponent-5cae3c03586552b2da76ebdcb489da7f",
             "file": "projects/tagme-components/src/lib/link/link.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -737,7 +481,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n\tselector: 'tg-link',\n\ttemplateUrl: './link.component.html',\n\tstyleUrls: ['./link.component.scss']\n})\nexport class LinkComponent {\n\t// Injects a style in the property style\n\t@Input() customStyles: string;\n\t// (Optional) Query params of the link\n\t@Input() queryParams?: {\n\t\t[k: string]: any;\n\t};\n\t// Destination of the link\n\t@Input() routerLink: string | any[];\n\t// (Optional) State for the destination\n\t@Input() state?: {\n\t\t[k: string]: any;\n\t};\n\t// Text of the link\n\t@Input() text: string;\n\t// Type of the link. It can be:\n\t// default\n\t// default-underline\n\t// small\n\t// small-underline\n\t// button\n\t// small button\n\t@Input() type: string = 'default';\n}",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n\tselector: 'tg-link',\n\ttemplateUrl: './link.component.html',\n\tstyleUrls: ['./link.component.scss']\n})\nexport class LinkComponent {\n\t// Injects a style in the property style\n\t@Input() customStyles: string;\n\t// (Optional) Query params of the link\n\t@Input() queryParams?: {\n\t\t[k: string]: any;\n\t};\n\t// Destination of the link\n\t@Input() routerLink: string | any[];\n\t// (Optional) State for the destination\n\t@Input() state?: {\n\t\t[k: string]: any;\n\t};\n\t// Text of the link\n\t@Input() text: string;\n\t// Type of the link. It can be:\n\t// default\n\t// default-underline\n\t// small\n\t// small-underline\n\t// button\n\t// small-button\n\t@Input() type: string = 'default';\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -747,111 +491,11 @@
             ],
             "stylesData": "",
             "templateData": "<a\n\tclass=\"link\"\n\t[ngClass]=\"{\n\t\t'link--default': type === 'default' || type === 'default-underline',\n\t\t'link--default--underline': type === 'default-underline',\n\t\t'link--small': type === 'small' || type === 'small-underline',\n\t\t'link--small--underline': type === 'small-underline',\n\t\t'link--button': type === 'button' || type === 'small-button',\n\t\t'link--button--small': type === 'small-button'\n\t}\"\n\t[queryParams]=\"queryParams\" \n\t[routerLink]=\"routerLink\" \n\t[state]=\"state\"\n\t[style]=\"customStyles\"\n>\n\t{{ text }}\n</a>"
-        },
-        {
-            "name": "LinksComponents",
-            "id": "component-LinksComponents-7c78ed9c6d4ae12144221e314665868d",
-            "file": "projects/tagme-components-showcase/src/app/pages/links/links.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-links",
-            "styleUrls": [
-                "../../app.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./links.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n\tselector: 'app-links',\n\ttemplateUrl: './links.component.html',\n\tstyleUrls: ['../../app.component.scss']\n})\nexport class LinksComponents {}",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".component {\n\tdisplay: block;\n\tmargin-bottom: 10px;\n}",
-                    "styleUrl": "../../app.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "templateData": "<tg-link\n\tclass=\"component\"\n\ttext=\"Link default\"\n></tg-link>\n<tg-link\n\tclass=\"component\"\n\ttext=\"Link default underline\"\n\ttype=\"default-underline\"\n></tg-link>\n<tg-link\n\tclass=\"component\"\n\ttext=\"Link small\"\n\ttype=\"small\"\n></tg-link>\n<tg-link\n\tclass=\"component\"\n\ttext=\"Link small underline\"\n\ttype=\"small-underline\"\n></tg-link>\n<tg-link\n\tclass=\"component\"\n\ttext=\"Link button\"\n\ttype=\"button\"\n></tg-link>\n<tg-link\n\tclass=\"component\"\n\ttext=\"Link small button\"\n\ttype=\"small-button\"\n></tg-link>\n<tg-link\n\tclass=\"component\"\n\ttext=\"Custom Style\"\n\tcustomStyles=\"color: red; text-decoration: underline; text-transform: uppercase\"\n></tg-link>\n"
-        },
-        {
-            "name": "PageComponent",
-            "id": "component-PageComponent-cca1a8911321fa17756ce90c90de65cc",
-            "file": "stories/page.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-page",
-            "styleUrls": [
-                "./page.css"
-            ],
-            "styles": [],
-            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://www.learnstorybook.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Learn Storybook\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\">\n          docs\n        </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "user",
-                    "defaultValue": "null",
-                    "line": 66,
-                    "type": "unknown"
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onCreateAccount",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 75,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogin",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 69,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogout",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "line": 72,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://www.learnstorybook.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Learn Storybook\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\">\n          docs\n        </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n\n// export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => (\n//   <article>\n//     <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />\n\n// );\n// Page.propTypes = {\n//   user: PropTypes.shape({}),\n//   onLogin: PropTypes.func.isRequired,\n//   onLogout: PropTypes.func.isRequired,\n//   onCreateAccount: PropTypes.func.isRequired,\n// };\n\n// Page.defaultProps = {\n//   user: null,\n// };\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nh2 {\n  font-weight: 900;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\np {\n  margin: 1em 0;\n}\n\na {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nli {\n  margin-bottom: 8px;\n}\n\n.tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\n.tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\n.tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\n.tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
-                    "styleUrl": "./page.css"
-                }
-            ],
-            "stylesData": ""
         }
     ],
     "modules": [
         {
-            "name": "AppModule",
+            "name": "BadgeModule",
             "children": [
                 {
                     "type": "providers",
@@ -861,70 +505,9 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "AppComponent"
-                        },
-                        {
-                            "name": "ButtonsComponent"
-                        },
-                        {
-                            "name": "CountersComponent"
-                        },
-                        {
-                            "name": "IconsComponent"
-                        },
-                        {
-                            "name": "LinksComponents"
+                            "name": "BadgeComponent"
                         }
                     ]
-                },
-                {
-                    "type": "imports",
-                    "elements": [
-                        {
-                            "name": "AppRoutingModule"
-                        },
-                        {
-                            "name": "ButtonModule"
-                        },
-                        {
-                            "name": "CounterModule"
-                        },
-                        {
-                            "name": "IconModule"
-                        },
-                        {
-                            "name": "LinkModule"
-                        }
-                    ]
-                },
-                {
-                    "type": "exports",
-                    "elements": []
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": [
-                        {
-                            "name": "AppComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
-        },
-        {
-            "name": "AppRoutingModule",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": []
                 },
                 {
                     "type": "imports",
@@ -932,7 +515,11 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "BadgeComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -965,7 +552,11 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -1099,36 +690,20 @@
                 "name": "context",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/tagme-components-showcase/src/test.ts",
-                "type": "",
-                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-            },
-            {
-                "name": "context",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/tagme-components/src/test.ts",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
-                "name": "environment",
+                "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/tagme-components-showcase/src/environments/environment.prod.ts",
-                "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "file": "stories/Badge.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/tagme-components-showcase/src/environments/environment.ts",
-                "type": "object",
-                "defaultValue": "{\n  production: false\n}"
-            },
-            {
-                "name": "Large",
+                "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Button.stories.ts",
@@ -1136,51 +711,20 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "LoggedIn",
+                "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Header.stories.ts",
+                "file": "stories/Counter.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "LoggedIn",
+                "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Page.stories.ts",
+                "file": "stories/Link.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Page.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "require",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/tagme-components-showcase/src/test.ts",
-                "type": "literal type"
             },
             {
                 "name": "require",
@@ -1190,67 +734,42 @@
                 "type": "literal type"
             },
             {
-                "name": "Secondary",
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Badge.stories.ts",
+                "type": "",
+                "defaultValue": "(args: BadgeComponent) => ({\n\tcomponent: BadgeComponent,\n\tprops: args\n})"
+            },
+            {
+                "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/Button.stories.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args\n})"
             },
             {
-                "name": "Small",
+                "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
+                "file": "stories/Counter.stories.ts",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "(args: CounterComponent) => ({\n\tcomponent: CounterComponent,\n\tprops: args\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Page.stories.ts",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
+                "file": "stories/Link.stories.ts",
+                "type": "",
+                "defaultValue": "(args: LinkComponent) => ({\n\tcomponent: LinkComponent,\n\tprops: args\n})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
-            "projects/tagme-components-showcase/src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/tagme-components-showcase/src/test.ts",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/tagme-components-showcase/src/test.ts",
-                    "type": "literal type"
-                }
-            ],
             "projects/tagme-components/src/test.ts": [
                 {
                     "name": "context",
@@ -1268,53 +787,27 @@
                     "type": "literal type"
                 }
             ],
-            "projects/tagme-components-showcase/src/environments/environment.prod.ts": [
+            "stories/Badge.stories.ts": [
                 {
-                    "name": "environment",
+                    "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/tagme-components-showcase/src/environments/environment.prod.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
-                }
-            ],
-            "projects/tagme-components-showcase/src/environments/environment.ts": [
+                    "file": "stories/Badge.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
                 {
-                    "name": "environment",
+                    "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/tagme-components-showcase/src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
+                    "file": "stories/Badge.stories.ts",
+                    "type": "",
+                    "defaultValue": "(args: BadgeComponent) => ({\n\tcomponent: BadgeComponent,\n\tprops: args\n})"
                 }
             ],
             "stories/Button.stories.ts": [
                 {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Small",
+                    "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Button.stories.ts",
@@ -1326,24 +819,16 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "stories/Button.stories.ts",
-                    "type": "Story<ButtonComponent>",
-                    "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args,\n})"
+                    "type": "",
+                    "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args\n})"
                 }
             ],
-            "stories/Header.stories.ts": [
+            "stories/Counter.stories.ts": [
                 {
-                    "name": "LoggedIn",
+                    "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Header.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Header.stories.ts",
+                    "file": "stories/Counter.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1351,25 +836,17 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Header.stories.ts",
-                    "type": "Story<Header>",
-                    "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
+                    "file": "stories/Counter.stories.ts",
+                    "type": "",
+                    "defaultValue": "(args: CounterComponent) => ({\n\tcomponent: CounterComponent,\n\tprops: args\n})"
                 }
             ],
-            "stories/Page.stories.ts": [
+            "stories/Link.stories.ts": [
                 {
-                    "name": "LoggedIn",
+                    "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Page.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Page.stories.ts",
+                    "file": "stories/Link.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1377,9 +854,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/Page.stories.ts",
-                    "type": "Story<Page>",
-                    "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
+                    "file": "stories/Link.stories.ts",
+                    "type": "",
+                    "defaultValue": "(args: LinkComponent) => ({\n\tcomponent: LinkComponent,\n\tprops: args\n})"
                 }
             ]
         },
@@ -1387,129 +864,19 @@
         "groupedEnumerations": {},
         "groupedTypeAliases": {}
     },
-    "routes": {
-        "name": "<root>",
-        "kind": "module",
-        "className": "AppModule",
-        "children": [
-            {
-                "name": "routes",
-                "filename": "projects/tagme-components-showcase/src/app/app-routing.module.ts",
-                "module": "AppRoutingModule",
-                "children": [
-                    {
-                        "path": "buttons",
-                        "component": "ButtonsComponent"
-                    },
-                    {
-                        "path": "counters",
-                        "component": "CountersComponent"
-                    },
-                    {
-                        "path": "icons",
-                        "component": "IconsComponent"
-                    },
-                    {
-                        "path": "links",
-                        "component": "LinksComponents"
-                    },
-                    {
-                        "path": "**",
-                        "component": "AppComponent"
-                    }
-                ],
-                "kind": "module"
-            }
-        ]
-    },
+    "routes": [],
     "coverage": {
-        "count": 2,
+        "count": 4,
         "status": "low",
         "files": [
             {
-                "filePath": "projects/tagme-components-showcase/src/app/app.component.ts",
+                "filePath": "projects/tagme-components/src/lib/badge/badge.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "AppComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/tagme-components-showcase/src/app/pages/buttons/buttons.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ButtonsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/tagme-components-showcase/src/app/pages/counters/counters.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "CountersComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/tagme-components-showcase/src/app/pages/icons/icons.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "IconsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/tagme-components-showcase/src/app/pages/links/links.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "LinksComponents",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/tagme-components-showcase/src/environments/environment.prod.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "environment",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/tagme-components-showcase/src/environments/environment.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "environment",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/tagme-components-showcase/src/test.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "context",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/tagme-components-showcase/src/test.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "require",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
+                "name": "BadgeComponent",
+                "coveragePercent": 66,
+                "coverageCount": "2/3",
+                "status": "good"
             },
             {
                 "filePath": "projects/tagme-components/src/lib/button/button.component.ts",
@@ -1568,11 +935,21 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Button.stories.ts",
+                "filePath": "stories/Badge.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Large",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1582,27 +959,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -1618,27 +975,17 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Header.stories.ts",
+                "filePath": "stories/Counter.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "LoggedIn",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Header.stories.ts",
+                "filePath": "stories/Counter.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1648,60 +995,23 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Page.stories.ts",
+                "filePath": "stories/Link.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "LoggedIn",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Page.stories.ts",
+                "filePath": "stories/Link.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 83,
-                "coverageCount": "5/6",
-                "status": "very-good"
-            },
-            {
-                "filePath": "stories/header.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HeaderComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/page.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "PageComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
                 "status": "low"
             }
         ]
