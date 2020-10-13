@@ -26,6 +26,6 @@ export class LinkComponent {
 	// small
 	// small-underline
 	// button
-	// small button
+	// small-button
 	@Input() type: string = 'default';
 }
