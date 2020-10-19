@@ -494,7 +494,7 @@
         },
         {
             "name": "NavComponent",
-            "id": "component-NavComponent-5b40d4823ad0995f68bf57bb8d97db9d",
+            "id": "component-NavComponent-001d8b07f1f66e0f630221d0453e8962",
             "file": "projects/tagme-components/src/lib/nav/nav.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -525,24 +525,59 @@
                     "type": "string"
                 }
             ],
-            "outputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "itemEmitter",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "description": "<p>Emitter of the item clicked</p>\n",
+                    "line": 37,
+                    "type": "EventEmitter<string>"
+                }
+            ],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "emitItem",
+                    "args": [
+                        {
+                            "name": "itemId",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "description": "<p>Emits the item</p>\n",
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "itemId",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n\tselector: 'tg-nav',\n\ttemplateUrl: './nav.component.html',\n\tstyleUrls: ['./nav.component.scss']\n})\nexport class NavComponent {\n\t/**\n\t * Type of navigation.\n\t * It can be:\n\t * \n\t * default\n\t * borderless\n\t */\n\t@Input() type: string = 'default';\n\n\t/**\n\t * Items of navigation.\n\t * Each item must to have:\n\t * \n\t * active: if the item is active\n\t * id: unique id for to be emitted\n\t * text: text of item\n\t */\n\t@Input() items: [\n\t\t{ \n\t\t\tactive: boolean,\n\t\t\tid: string,\n\t\t\ttext: string\n\t\t}\n\t];\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n\tselector: 'tg-nav',\n\ttemplateUrl: './nav.component.html',\n\tstyleUrls: ['./nav.component.scss']\n})\nexport class NavComponent {\n\t/**\n\t * Type of navigation.\n\t * It can be:\n\t * \n\t * default\n\t * borderless\n\t */\n\t@Input() type: string = 'default';\n\n\t/**\n\t * Items of navigation.\n\t * Each item must to have:\n\t * \n\t * active: if the item is active\n\t * id: unique id for to be emitted\n\t * text: text of item\n\t */\n\t@Input() items: [\n\t\t{ \n\t\t\tactive: boolean,\n\t\t\tid: string,\n\t\t\ttext: string\n\t\t}\n\t];\n\n\t/**\n\t * Emitter of the item clicked\n\t */\n\t@Output() itemEmitter: EventEmitter<string> = new EventEmitter<string>();\n\n\n\t/**\n\t * Emits the item\n\t */\n\tpublic emitItem(itemId: string): void {\n\t\tthis.itemEmitter.emit(itemId);\n\t}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../global.scss';\n\n.nav {\n\tdisplay: flex;\n\n\t&__item {\n\t\tborder: 1px solid $medium-gray;\n\t\tborder-right: none;\n\t\tbox-sizing: border-box;\n\t\tcolor: $black;\n\t\tfont: $main-font-2x-semibold;\n\t\tpadding: 12px 18px 14px 18px;\n\n\t\t&:first-of-type {\n\t\t\tborder-top-left-radius: 3px;\n\t\t}\n\n\t\t&:last-of-type {\n\t\t\tborder-right: 1px solid $medium-gray;\n\t\t\tborder-top-right-radius: 3px;\n\t\t}\n\n\t\t&--active {\n\t\t\tborder-bottom: 3px solid $main-orange;\n\t\t}\n\t}\n}",
+                    "data": "@import '../global.scss';\n\n.nav {\n\tdisplay: flex;\n\n\t&__item {\n\t\tcolor: $black;\n\t\tcursor: pointer;\n\t\tfont: $main-font-2x-semibold;\n\t\tpadding: 12px 18px 14px 18px;\n\n\t\t&--default {\n\t\t\tborder: 1px solid $medium-gray;\n\t\t\tborder-right: none;\n\t\t\tbox-sizing: border-box;\n\n\t\t\t&--active {\n\t\t\t\tborder-bottom: 3px solid $main-orange;\n\t\t\t}\n\n\t\t\t&:first-of-type {\n\t\t\t\tborder-top-left-radius: 3px;\n\t\t\t}\n\t\n\t\t\t&:last-of-type {\n\t\t\t\tborder-right: 1px solid $medium-gray;\n\t\t\t\tborder-top-right-radius: 3px;\n\t\t\t}\n\t\t}\n\n\t\t&--borderless {\n\t\t\tborder: none;\n\t\t\tborder-bottom: 1px solid $medium-gray;\n\n\t\t\t&--active {\n\t\t\t\tborder-bottom: none;\n\t\t\t\tborder-left: 1px solid $medium-gray;\n\t\t\t\tborder-right: 1px solid $medium-gray;\n\t\t\t\tborder-top: 1px solid $medium-gray;\n\t\t\t\tborder-top-left-radius: 3px;\n\t\t\t\tborder-top-right-radius: 3px;\n\t\t\t\tbox-sizing: border-box;\n\t\t\t}\n\t\t}\n\t}\n}",
                     "styleUrl": "./nav.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<nav class=\"nav\">\n\t<div \n\t\tclass=\"nav__item\"\n\t\t*ngFor=\"let item of items\"\n\t\t[ngClass]=\"{\n\t\t\t'nav__item--active': item.active\n\t\t}\"\n\t>{{ item.text }}</div>\n</nav>"
+            "templateData": "<nav class=\"nav\">\n\t<div \n\t\tclass=\"nav__item\"\n\t\t(click)=\"emitItem(item.id)\"\n\t\t*ngFor=\"let item of items\"\n\t\t[ngClass]=\"{\n\t\t\t'nav__item--default': type === 'default',\n\t\t\t'nav__item--default--active': type === 'default' && item.active,\n\t\t\t'nav__item--borderless': type == 'borderless',\n\t\t\t'nav__item--borderless--active': type == 'borderless' && item.active\n\t\t}\"\n\t>{{ item.text }}</div>\n</nav>"
         }
     ],
     "modules": [
@@ -811,6 +846,14 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "stories/Icon.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "stories/Link.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
@@ -853,6 +896,14 @@
                 "file": "stories/Counter.stories.ts",
                 "type": "",
                 "defaultValue": "(args: CounterComponent) => ({\n\tcomponent: CounterComponent,\n\tprops: args\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Icon.stories.ts",
+                "type": "",
+                "defaultValue": "(args: IconComponent) => ({\n\tcomponent: IconComponent,\n\tprops: args\n})"
             },
             {
                 "name": "Template",
@@ -944,6 +995,24 @@
                     "file": "stories/Counter.stories.ts",
                     "type": "",
                     "defaultValue": "(args: CounterComponent) => ({\n\tcomponent: CounterComponent,\n\tprops: args\n})"
+                }
+            ],
+            "stories/Icon.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Icon.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Icon.stories.ts",
+                    "type": "",
+                    "defaultValue": "(args: IconComponent) => ({\n\tcomponent: IconComponent,\n\tprops: args\n})"
                 }
             ],
             "stories/Link.stories.ts": [
@@ -1042,9 +1111,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "NavComponent",
-                "coveragePercent": 66,
-                "coverageCount": "2/3",
-                "status": "good"
+                "coveragePercent": 80,
+                "coverageCount": "4/5",
+                "status": "very-good"
             },
             {
                 "filePath": "projects/tagme-components/src/test.ts",
@@ -1118,6 +1187,26 @@
             },
             {
                 "filePath": "stories/Counter.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Icon.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
