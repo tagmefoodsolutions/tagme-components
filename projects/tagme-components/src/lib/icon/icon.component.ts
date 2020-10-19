@@ -4,9 +4,14 @@ import { IconService } from './icon.service';
 @Component({
 	selector: 'tg-icon',
 	templateUrl: './icon.component.html',
+	styleUrls: ['./icon.component.scss']
 })
 export class IconComponent {
 
+	/**
+	 * Injects the service of icons
+	 * @param iconService Service of icons
+	 */
 	constructor(private iconService: IconService) {}
 
 	/**
@@ -19,8 +24,10 @@ export class IconComponent {
 	 */
 	@Input() color: string = '#30323B';
 
+	/**
+	 * Gets the icon from the service
+	 */
 	get icon() {
-		console.log('called')
 		return this.iconService.getIcon(this.name, this.color);
 	}
 }
