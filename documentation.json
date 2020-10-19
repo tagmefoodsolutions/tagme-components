@@ -1,7 +1,117 @@
 {
     "pipes": [],
     "interfaces": [],
-    "injectables": [],
+    "injectables": [
+        {
+            "name": "IconService",
+            "id": "injectable-IconService-c716a5a9d84d051d8841d0bac0611171",
+            "file": "projects/tagme-components/src/lib/icon/icon.service.ts",
+            "properties": [
+                {
+                    "name": "icons",
+                    "defaultValue": "new Map([\n\t\t['plus_24', (color) => `<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"11\" y=\"7\" width=\"2\" height=\"10\" fill=\"${color}\"/><rect x=\"7\" y=\"11\" width=\"10\" height=\"2\" fill=\"${color}\"/></svg>`],\n\t\t['minus_24', (color) => `<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"7\" y=\"11\" width=\"10\" height=\"2\" fill=\"${color}\"/></svg>`],\n\t\t['trash_24', (color) => `<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><mask id=\"mask0\" mask-type=\"alpha\" maskUnits=\"userSpaceOnUse\" x=\"7\" y=\"11\" width=\"10\" height=\"10\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M7 11H17V21H7V11Z\" fill=\"${color}\"/></mask><g mask=\"url(#mask0)\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M9.01699 19.7935H14.983L15.8048 12.2065H8.19521L9.01699 19.7935ZM15.1936 21H8.80637C8.30578 21 7.89602 20.5894 7.87493 20.0764L7.00364 12.0324C7.00122 12.0101 7 11.9876 7 11.9652C7 11.433 7.41823 11 7.93232 11H16.0677C16.5818 11 17 11.433 17 11.9652C17 11.9876 16.9988 12.0101 16.9964 12.0324L16.1251 20.0764C16.104 20.5894 15.6943 21 15.1936 21Z\" fill=\"${color}\"/></g><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M8.39995 8.8024L15.4487 7.83517L14.9456 7.13088L8.67162 7.99181L8.39995 8.8024ZM16.1581 8.86492L8.02775 9.98056C7.93167 9.99375 7.78712 10.0071 7.64411 9.9957C7.55658 9.98875 7.47997 9.97342 7.40998 9.94885C7.18612 9.87021 7.03283 9.69486 7 9.47983L7.02154 9.23109L7.61975 7.44605C7.66455 7.24379 7.84293 6.97846 8.44835 6.89538L14.8317 6.01946C14.9277 6.00627 15.0723 5.99294 15.2153 6.00429C15.3028 6.01123 15.3794 6.02657 15.4494 6.05113C15.5998 6.10395 15.7183 6.20035 15.7898 6.32313L16.8987 7.87572L16.9938 8.10845C17.0164 8.25592 17.0227 8.74626 16.1581 8.86492Z\" fill=\"${color}\"/><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.7095 6.7861L10.562 5.78627L12.3468 5.53273L12.4943 6.53256L14 6.31866L13.8089 5.02334C13.7128 4.37152 13.0941 3.91804 12.4299 4.01243L10.0429 4.35152C9.37864 4.44587 8.9165 5.0529 9.01266 5.70468L9.20379 7L10.7095 6.7861Z\" fill=\"${color}\"/></svg>`]\n\t])",
+                    "type": "",
+                    "optional": false,
+                    "description": "<p>Map of icons in SVG</p>\n",
+                    "line": 18,
+                    "modifierKind": [
+                        112
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "getIcon",
+                    "args": [
+                        {
+                            "name": "iconName",
+                            "type": "string"
+                        },
+                        {
+                            "name": "color",
+                            "type": "string",
+                            "defaultValue": "'#30323B'"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 29,
+                    "description": "",
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 2546,
+                                "end": 2554,
+                                "flags": 0,
+                                "escapedText": "iconName"
+                            },
+                            "type": "string",
+                            "tagName": {
+                                "pos": 2540,
+                                "end": 2545,
+                                "flags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>Key of the icon in the map</p>\n"
+                        },
+                        {
+                            "name": {
+                                "pos": 2593,
+                                "end": 2598,
+                                "flags": 0,
+                                "escapedText": "color"
+                            },
+                            "type": "string",
+                            "defaultValue": "'#30323B'",
+                            "tagName": {
+                                "pos": 2587,
+                                "end": 2592,
+                                "flags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>Optional color to fill the icon</p>\n"
+                        }
+                    ]
+                }
+            ],
+            "description": "",
+            "sourceCode": "import { Injectable } from \"@angular/core\";\nimport { DomSanitizer } from '@angular/platform-browser';\n\n@Injectable({\n\tprovidedIn: 'root'\n})\nexport class IconService {\n\n\t/**\n\t * Injects the dom's sanitizer\n\t * @param sanitizer Sanitizer of content used here for html trusted\n\t */\n\tconstructor(private sanitizer: DomSanitizer) {}\n\t\n\t/**\n\t * Map of icons in SVG\n\t */\n\tprivate icons = new Map([\n\t\t['plus_24', (color) => `<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"11\" y=\"7\" width=\"2\" height=\"10\" fill=\"${color}\"/><rect x=\"7\" y=\"11\" width=\"10\" height=\"2\" fill=\"${color}\"/></svg>`],\n\t\t['minus_24', (color) => `<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"7\" y=\"11\" width=\"10\" height=\"2\" fill=\"${color}\"/></svg>`],\n\t\t['trash_24', (color) => `<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><mask id=\"mask0\" mask-type=\"alpha\" maskUnits=\"userSpaceOnUse\" x=\"7\" y=\"11\" width=\"10\" height=\"10\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M7 11H17V21H7V11Z\" fill=\"${color}\"/></mask><g mask=\"url(#mask0)\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M9.01699 19.7935H14.983L15.8048 12.2065H8.19521L9.01699 19.7935ZM15.1936 21H8.80637C8.30578 21 7.89602 20.5894 7.87493 20.0764L7.00364 12.0324C7.00122 12.0101 7 11.9876 7 11.9652C7 11.433 7.41823 11 7.93232 11H16.0677C16.5818 11 17 11.433 17 11.9652C17 11.9876 16.9988 12.0101 16.9964 12.0324L16.1251 20.0764C16.104 20.5894 15.6943 21 15.1936 21Z\" fill=\"${color}\"/></g><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M8.39995 8.8024L15.4487 7.83517L14.9456 7.13088L8.67162 7.99181L8.39995 8.8024ZM16.1581 8.86492L8.02775 9.98056C7.93167 9.99375 7.78712 10.0071 7.64411 9.9957C7.55658 9.98875 7.47997 9.97342 7.40998 9.94885C7.18612 9.87021 7.03283 9.69486 7 9.47983L7.02154 9.23109L7.61975 7.44605C7.66455 7.24379 7.84293 6.97846 8.44835 6.89538L14.8317 6.01946C14.9277 6.00627 15.0723 5.99294 15.2153 6.00429C15.3028 6.01123 15.3794 6.02657 15.4494 6.05113C15.5998 6.10395 15.7183 6.20035 15.7898 6.32313L16.8987 7.87572L16.9938 8.10845C17.0164 8.25592 17.0227 8.74626 16.1581 8.86492Z\" fill=\"${color}\"/><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.7095 6.7861L10.562 5.78627L12.3468 5.53273L12.4943 6.53256L14 6.31866L13.8089 5.02334C13.7128 4.37152 13.0941 3.91804 12.4299 4.01243L10.0429 4.35152C9.37864 4.44587 8.9165 5.0529 9.01266 5.70468L9.20379 7L10.7095 6.7861Z\" fill=\"${color}\"/></svg>`]\n\t]);\n\n\t/**\n\t * \n\t * @param iconName Key of the icon in the map\n\t * @param color Optional color to fill the icon\n\t */\n\tpublic getIcon(iconName: string, color: string = '#30323B') {\n\t\treturn this.icons.has(iconName) \n\t\t\t? this.sanitizer.bypassSecurityTrustHtml(this.icons.get(iconName)(color))\n\t\t\t: null;\n\t}\n}",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "<p>Injects the dom&#39;s sanitizer</p>\n",
+                "args": [
+                    {
+                        "name": "sanitizer",
+                        "type": "DomSanitizer"
+                    }
+                ],
+                "line": 7,
+                "jsdoctags": [
+                    {
+                        "name": {
+                            "pos": 216,
+                            "end": 225,
+                            "flags": 0,
+                            "escapedText": "sanitizer"
+                        },
+                        "type": "DomSanitizer",
+                        "tagName": {
+                            "pos": 210,
+                            "end": 215,
+                            "flags": 0,
+                            "escapedText": "param"
+                        },
+                        "comment": "<p>Sanitizer of content used here for html trusted</p>\n"
+                    }
+                ]
+            },
+            "type": "injectable"
+        }
+    ],
     "classes": [],
     "directives": [],
     "components": [
@@ -260,16 +370,17 @@
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-880a5945d10c8b8560d600a579bc74fa",
+            "id": "component-IconComponent-5ebb3b06af29760bddb1211361ea4c46",
             "file": "projects/tagme-components/src/lib/icon/icon.component.ts",
-            "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
             "selector": "tg-icon",
-            "styleUrls": [],
+            "styleUrls": [
+                "./icon.component.scss"
+            ],
             "styles": [],
             "templateUrl": [
                 "./icon.component.html"
@@ -279,148 +390,76 @@
                 {
                     "name": "color",
                     "defaultValue": "'#30323B'",
-                    "line": 16,
+                    "description": "<p>Sets the color of the icon</p>\n",
+                    "line": 25,
                     "type": "string"
                 },
                 {
                     "name": "name",
-                    "line": 11,
+                    "description": "<p>Sets the type of icon with it&#39;s name</p>\n",
+                    "line": 20,
                     "type": "string"
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "icons",
-                    "defaultValue": "{\n\t\tplus_24: '<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"11\" y=\"7\" width=\"2\" height=\"10\"/><rect x=\"7\" y=\"11\" width=\"10\" height=\"2\" /></svg>',\n\t\tminus_24: '<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"7\" y=\"11\" width=\"10\" height=\"2\"/></svg>',\n\t\ttrash_24: '<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><mask id=\"mask0\" mask-type=\"alpha\" maskUnits=\"userSpaceOnUse\" x=\"7\" y=\"11\" width=\"10\" height=\"10\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M7 11H17V21H7V11Z\" /></mask><g mask=\"url(#mask0)\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M9.01699 19.7935H14.983L15.8048 12.2065H8.19521L9.01699 19.7935ZM15.1936 21H8.80637C8.30578 21 7.89602 20.5894 7.87493 20.0764L7.00364 12.0324C7.00122 12.0101 7 11.9876 7 11.9652C7 11.433 7.41823 11 7.93232 11H16.0677C16.5818 11 17 11.433 17 11.9652C17 11.9876 16.9988 12.0101 16.9964 12.0324L16.1251 20.0764C16.104 20.5894 15.6943 21 15.1936 21Z\" /></g><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M8.39995 8.8024L15.4487 7.83517L14.9456 7.13088L8.67162 7.99181L8.39995 8.8024ZM16.1581 8.86492L8.02775 9.98056C7.93167 9.99375 7.78712 10.0071 7.64411 9.9957C7.55658 9.98875 7.47997 9.97342 7.40998 9.94885C7.18612 9.87021 7.03283 9.69486 7 9.47983L7.02154 9.23109L7.61975 7.44605C7.66455 7.24379 7.84293 6.97846 8.44835 6.89538L14.8317 6.01946C14.9277 6.00627 15.0723 5.99294 15.2153 6.00429C15.3028 6.01123 15.3794 6.02657 15.4494 6.05113C15.5998 6.10395 15.7183 6.20035 15.7898 6.32313L16.8987 7.87572L16.9938 8.10845C17.0164 8.25592 17.0227 8.74626 16.1581 8.86492Z\" /><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.7095 6.7861L10.562 5.78627L12.3468 5.53273L12.4943 6.53256L14 6.31866L13.8089 5.02334C13.7128 4.37152 13.0941 3.91804 12.4299 4.01243L10.0429 4.35152C9.37864 4.44587 8.9165 5.0529 9.01266 5.70468L9.20379 7L10.7095 6.7861Z\" /></svg>'\n\t}",
-                    "type": "object",
-                    "optional": false,
-                    "description": "",
-                    "line": 24,
-                    "modifierKind": [
-                        112
-                    ]
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "chooseIcon",
-                    "args": [
-                        {
-                            "name": "iconName",
-                            "type": "string"
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 34,
-                    "modifierKind": [
-                        112
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "iconName",
-                            "type": "string",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "fillIcon",
-                    "args": [
-                        {
-                            "name": "color",
-                            "type": "string"
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 39,
-                    "modifierKind": [
-                        112
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "color",
-                            "type": "string",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 19
-                }
-            ],
+            "propertiesClass": [],
+            "methodsClass": [],
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, ElementRef, Input, OnInit } from '@angular/core';\n\n@Component({\n\tselector: 'tg-icon',\n\ttemplateUrl: './icon.component.html',\n\tchangeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class IconComponent implements OnInit {\n\t// Sets the type of icon with it's name\n\t@Input() \n\tset name(iconName: string) {\n\t\tthis.chooseIcon(iconName);\n\t}\n\n\t// Sets the color of the icon\n\t@Input() color: string = '#30323B';\n\n\t// Fills the icon when it's created\n\tngOnInit(): void {\n\t\tthis.fillIcon(this.color);\n\t}\n\n\t// List of icons\n\tprivate icons = {\n\t\tplus_24: '<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"11\" y=\"7\" width=\"2\" height=\"10\"/><rect x=\"7\" y=\"11\" width=\"10\" height=\"2\" /></svg>',\n\t\tminus_24: '<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"7\" y=\"11\" width=\"10\" height=\"2\"/></svg>',\n\t\ttrash_24: '<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><mask id=\"mask0\" mask-type=\"alpha\" maskUnits=\"userSpaceOnUse\" x=\"7\" y=\"11\" width=\"10\" height=\"10\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M7 11H17V21H7V11Z\" /></mask><g mask=\"url(#mask0)\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M9.01699 19.7935H14.983L15.8048 12.2065H8.19521L9.01699 19.7935ZM15.1936 21H8.80637C8.30578 21 7.89602 20.5894 7.87493 20.0764L7.00364 12.0324C7.00122 12.0101 7 11.9876 7 11.9652C7 11.433 7.41823 11 7.93232 11H16.0677C16.5818 11 17 11.433 17 11.9652C17 11.9876 16.9988 12.0101 16.9964 12.0324L16.1251 20.0764C16.104 20.5894 15.6943 21 15.1936 21Z\" /></g><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M8.39995 8.8024L15.4487 7.83517L14.9456 7.13088L8.67162 7.99181L8.39995 8.8024ZM16.1581 8.86492L8.02775 9.98056C7.93167 9.99375 7.78712 10.0071 7.64411 9.9957C7.55658 9.98875 7.47997 9.97342 7.40998 9.94885C7.18612 9.87021 7.03283 9.69486 7 9.47983L7.02154 9.23109L7.61975 7.44605C7.66455 7.24379 7.84293 6.97846 8.44835 6.89538L14.8317 6.01946C14.9277 6.00627 15.0723 5.99294 15.2153 6.00429C15.3028 6.01123 15.3794 6.02657 15.4494 6.05113C15.5998 6.10395 15.7183 6.20035 15.7898 6.32313L16.8987 7.87572L16.9938 8.10845C17.0164 8.25592 17.0227 8.74626 16.1581 8.86492Z\" /><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.7095 6.7861L10.562 5.78627L12.3468 5.53273L12.4943 6.53256L14 6.31866L13.8089 5.02334C13.7128 4.37152 13.0941 3.91804 12.4299 4.01243L10.0429 4.35152C9.37864 4.44587 8.9165 5.0529 9.01266 5.70468L9.20379 7L10.7095 6.7861Z\" /></svg>'\n\t};\n\n\t// Injects the ElementRef to allow the access to the HTML element\n\tconstructor(private element: ElementRef) {}\n\n\t// Injects in the HTML element the svg icon\n\tprivate chooseIcon(iconName: string): void {\n\t\tthis.element.nativeElement.innerHTML = this.icons[iconName] || null;\n\t}\n\n\t// Fills the icon with a color\n\tprivate fillIcon(color: string): void {\n\t\tthis.element?.nativeElement?.firstChild?.childNodes.forEach(element => {\n\t\t\telement.style.fill = color;\n\t\t});\n\t}\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { IconService } from './icon.service';\n\n@Component({\n\tselector: 'tg-icon',\n\ttemplateUrl: './icon.component.html',\n\tstyleUrls: ['./icon.component.scss']\n})\nexport class IconComponent {\n\n\t/**\n\t * Injects the service of icons\n\t * @param iconService Service of icons\n\t */\n\tconstructor(private iconService: IconService) {}\n\n\t/**\n\t * Sets the type of icon with it's name\n\t */\n\t@Input() name: string;\n\n\t/**\n\t * Sets the color of the icon\n\t */\n\t@Input() color: string = '#30323B';\n\n\t/**\n\t * Gets the icon from the service\n\t */\n\tget icon() {\n\t\treturn this.iconService.getIcon(this.name, this.color);\n\t}\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": ".icon {\n\tdisplay: inline-flex;\n}",
+                    "styleUrl": "./icon.component.scss"
+                }
+            ],
             "stylesData": "",
             "constructorObj": {
                 "name": "constructor",
-                "description": "",
+                "description": "<p>Injects the service of icons</p>\n",
                 "args": [
                     {
-                        "name": "element",
-                        "type": "ElementRef"
+                        "name": "iconService",
+                        "type": "IconService"
                     }
                 ],
-                "line": 28,
+                "line": 9,
                 "jsdoctags": [
                     {
-                        "name": "element",
-                        "type": "ElementRef",
+                        "name": {
+                            "pos": 291,
+                            "end": 302,
+                            "flags": 0,
+                            "escapedText": "iconService"
+                        },
+                        "type": "IconService",
                         "tagName": {
-                            "text": "param"
-                        }
+                            "pos": 285,
+                            "end": 290,
+                            "flags": 0,
+                            "escapedText": "param"
+                        },
+                        "comment": "<p>Service of icons</p>\n"
                     }
                 ]
             },
-            "implements": [
-                "OnInit"
-            ],
             "accessors": {
-                "name": {
-                    "name": "name",
-                    "setSignature": {
-                        "name": "name",
-                        "type": "void",
-                        "args": [
-                            {
-                                "name": "iconName",
-                                "type": "string"
-                            }
-                        ],
-                        "returnType": "void",
-                        "line": 11,
-                        "jsdoctags": [
-                            {
-                                "name": "iconName",
-                                "type": "string",
-                                "tagName": {
-                                    "text": "param"
-                                }
-                            }
-                        ]
+                "icon": {
+                    "name": "icon",
+                    "getSignature": {
+                        "name": "icon",
+                        "type": "",
+                        "returnType": "",
+                        "line": 30,
+                        "description": "<p>Gets the icon from the service</p>\n"
                     }
                 }
             },
-            "templateData": "<ng-content></ng-content>"
+            "templateData": "<span class=\"icon\" [innerHTML]=\"icon\"></span>"
         },
         {
             "name": "LinkComponent",
@@ -701,7 +740,11 @@
             "children": [
                 {
                     "type": "providers",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "IconService"
+                        }
+                    ]
                 },
                 {
                     "type": "declarations",
@@ -1058,7 +1101,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 7,
+        "count": 12,
         "status": "low",
         "files": [
             {
@@ -1093,9 +1136,18 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "IconComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/8",
-                "status": "low"
+                "coveragePercent": 75,
+                "coverageCount": "3/4",
+                "status": "good"
+            },
+            {
+                "filePath": "projects/tagme-components/src/lib/icon/icon.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "IconService",
+                "coveragePercent": 50,
+                "coverageCount": "2/4",
+                "status": "medium"
             },
             {
                 "filePath": "projects/tagme-components/src/lib/link/link.component.ts",
