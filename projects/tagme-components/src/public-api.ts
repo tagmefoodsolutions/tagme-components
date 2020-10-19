@@ -16,3 +16,6 @@ export * from './lib/link/link.component';
 
 export * from './lib/badge/badge.module';
 export * from './lib/badge/badge.component';
+
+export * from './lib/nav/nav.module';
+export * from './lib/nav/nav.component';

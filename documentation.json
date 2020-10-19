@@ -49,7 +49,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../global.scss';\n\n.badge {\n\tbackground-color: $main-orange;\n\tborder-radius: 3px;\n\tcolor: $white;\n\tfont: $main-font-2x-regular;\n\tpadding: 2px;\n\ttext-align: center;\n}",
+                    "data": "@import '../global.scss';\n\n.badge {\n\tbackground-color: $main-orange;\n\tborder-radius: 3px;\n\tcolor: $white;\n\tdisplay: inline-block;\n\tfont: $main-font-2x-regular;\n\tmin-width: 18px;\n\ttext-align: center;\n\tvertical-align: baseline;\n\twhite-space: nowrap;\n}",
                     "styleUrl": "./badge.component.scss"
                 }
             ],
@@ -144,7 +144,7 @@
         },
         {
             "name": "CounterComponent",
-            "id": "component-CounterComponent-8477364a3d49d23d43460a1564718963",
+            "id": "component-CounterComponent-289dee5986fe5ec2fec32556b3ce5e9f",
             "file": "projects/tagme-components/src/lib/counter/counter.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -491,6 +491,58 @@
             ],
             "stylesData": "",
             "templateData": "<a\n\tclass=\"link\"\n\t[ngClass]=\"{\n\t\t'link--default': type === 'default' || type === 'default-underline',\n\t\t'link--default--underline': type === 'default-underline',\n\t\t'link--small': type === 'small' || type === 'small-underline',\n\t\t'link--small--underline': type === 'small-underline',\n\t\t'link--button': type === 'button' || type === 'small-button',\n\t\t'link--button--small': type === 'small-button'\n\t}\"\n\t[queryParams]=\"queryParams\" \n\t[routerLink]=\"routerLink\" \n\t[state]=\"state\"\n\t[style]=\"customStyles\"\n>\n\t{{ text }}\n</a>"
+        },
+        {
+            "name": "NavComponent",
+            "id": "component-NavComponent-5b40d4823ad0995f68bf57bb8d97db9d",
+            "file": "projects/tagme-components/src/lib/nav/nav.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "tg-nav",
+            "styleUrls": [
+                "./nav.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./nav.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "description": "<p>Items of navigation.\nEach item must to have:</p>\n<p>active: if the item is active\nid: unique id for to be emitted\ntext: text of item</p>\n",
+                    "line": 26,
+                    "type": "[literal type]"
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'default'",
+                    "description": "<p>Type of navigation.\nIt can be:</p>\n<p>default\nborderless</p>\n",
+                    "line": 16,
+                    "type": "string"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n\tselector: 'tg-nav',\n\ttemplateUrl: './nav.component.html',\n\tstyleUrls: ['./nav.component.scss']\n})\nexport class NavComponent {\n\t/**\n\t * Type of navigation.\n\t * It can be:\n\t * \n\t * default\n\t * borderless\n\t */\n\t@Input() type: string = 'default';\n\n\t/**\n\t * Items of navigation.\n\t * Each item must to have:\n\t * \n\t * active: if the item is active\n\t * id: unique id for to be emitted\n\t * text: text of item\n\t */\n\t@Input() items: [\n\t\t{ \n\t\t\tactive: boolean,\n\t\t\tid: string,\n\t\t\ttext: string\n\t\t}\n\t];\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../global.scss';\n\n.nav {\n\tdisplay: flex;\n\n\t&__item {\n\t\tborder: 1px solid $medium-gray;\n\t\tborder-right: none;\n\t\tbox-sizing: border-box;\n\t\tcolor: $black;\n\t\tfont: $main-font-2x-semibold;\n\t\tpadding: 12px 18px 14px 18px;\n\n\t\t&:first-of-type {\n\t\t\tborder-top-left-radius: 3px;\n\t\t}\n\n\t\t&:last-of-type {\n\t\t\tborder-right: 1px solid $medium-gray;\n\t\t\tborder-top-right-radius: 3px;\n\t\t}\n\n\t\t&--active {\n\t\t\tborder-bottom: 3px solid $main-orange;\n\t\t}\n\t}\n}",
+                    "styleUrl": "./nav.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<nav class=\"nav\">\n\t<div \n\t\tclass=\"nav__item\"\n\t\t*ngFor=\"let item of items\"\n\t\t[ngClass]=\"{\n\t\t\t'nav__item--active': item.active\n\t\t}\"\n\t>{{ item.text }}</div>\n</nav>"
         }
     ],
     "modules": [
@@ -682,6 +734,43 @@
                     "elements": []
                 }
             ]
+        },
+        {
+            "name": "NavModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "NavComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "NavComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
         }
     ],
     "miscellaneous": {
@@ -727,6 +816,14 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Nav.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -739,7 +836,7 @@
                 "subtype": "variable",
                 "file": "stories/Badge.stories.ts",
                 "type": "",
-                "defaultValue": "(args: BadgeComponent) => ({\n\tcomponent: BadgeComponent,\n\tprops: args\n})"
+                "defaultValue": "(args: BadgeComponent) => ({\n\tcomponent: BadgeComponent,\n\tprops: args,\n})"
             },
             {
                 "name": "Template",
@@ -764,6 +861,14 @@
                 "file": "stories/Link.stories.ts",
                 "type": "",
                 "defaultValue": "(args: LinkComponent) => ({\n\tcomponent: LinkComponent,\n\tprops: args\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/Nav.stories.ts",
+                "type": "",
+                "defaultValue": "(args: NavComponent) => ({\n\tcomponent: NavComponent,\n\tprops: args\n})"
             }
         ],
         "functions": [],
@@ -802,7 +907,7 @@
                     "subtype": "variable",
                     "file": "stories/Badge.stories.ts",
                     "type": "",
-                    "defaultValue": "(args: BadgeComponent) => ({\n\tcomponent: BadgeComponent,\n\tprops: args\n})"
+                    "defaultValue": "(args: BadgeComponent) => ({\n\tcomponent: BadgeComponent,\n\tprops: args,\n})"
                 }
             ],
             "stories/Button.stories.ts": [
@@ -858,6 +963,24 @@
                     "type": "",
                     "defaultValue": "(args: LinkComponent) => ({\n\tcomponent: LinkComponent,\n\tprops: args\n})"
                 }
+            ],
+            "stories/Nav.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Nav.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Nav.stories.ts",
+                    "type": "",
+                    "defaultValue": "(args: NavComponent) => ({\n\tcomponent: NavComponent,\n\tprops: args\n})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -866,7 +989,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 4,
+        "count": 7,
         "status": "low",
         "files": [
             {
@@ -913,6 +1036,15 @@
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
                 "status": "low"
+            },
+            {
+                "filePath": "projects/tagme-components/src/lib/nav/nav.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavComponent",
+                "coveragePercent": 66,
+                "coverageCount": "2/3",
+                "status": "good"
             },
             {
                 "filePath": "projects/tagme-components/src/test.ts",
@@ -1006,6 +1138,26 @@
             },
             {
                 "filePath": "stories/Link.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Nav.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/Nav.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

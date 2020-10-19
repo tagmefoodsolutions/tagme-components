@@ -1,0 +1,13 @@
+<nav class="nav">
+	<div 
+		class="nav__item"
+		(click)="emitItem(item.id)"
+		*ngFor="let item of items"
+		[ngClass]="{
+			'nav__item--default': type === 'default',
+			'nav__item--default--active': type === 'default' && item.active,
+			'nav__item--borderless': type == 'borderless',
+			'nav__item--borderless--active': type == 'borderless' && item.active
+		}"
+	>{{ item.text }}</div>
+</nav>
