@@ -11,8 +11,8 @@ export default {
 		moduleMetadata({
 			imports: [
 				CommonModule,
-				RouterModule
-			]
+				RouterModule.forRoot([], { useHash: true }),
+      ]
 		})
 	],
 	argTypes: {
@@ -40,5 +40,6 @@ const Template = (args: LinkComponent) => ({
 export const Default = Template.bind({})
 Default.args = {
 	text: 'Link',
-	type: 'default'
+  type: 'default',
+  routerLink: 'https://www.tagme.com.br'
 }
