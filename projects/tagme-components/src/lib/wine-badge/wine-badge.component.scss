@@ -1,0 +1,62 @@
+.wine-badge {
+	border-radius: 50%;
+	display: inline-flex;
+	height: 14px;
+	width: 14px;
+
+	&--white {
+		background-color: #E6E2A0;
+	}
+
+	&--sweet-red {
+		background-color: #730207;
+	}
+
+	&--porto {
+		background-color: #970518;
+	}
+
+	&--fortified-red {
+		background-color: #970518;
+	}
+	
+	&--white-porto {
+		background-color: #A2884A;
+	}
+
+	&--sweet-white {
+		background-color: #C1A460;
+	}
+
+	&--fortified-white {
+		background-color: #AC8B3E;
+	}
+
+	&--jerez {
+		background-color: #E8803B;
+	}
+
+	&--madeira {
+		background-color: #BF6327;
+	}
+
+	&--rose {
+		background-color: #FF676C;
+	}
+
+	&--red {
+		background-color: #BC075E;
+	}
+
+	&--sparkling {
+		background-color: #D6D565;
+	}
+
+	&--champagne {
+		background-color: #E9E884;
+	}
+
+	&--distilled-grape {
+		background-color: #E8BED6;
+	}
+}
