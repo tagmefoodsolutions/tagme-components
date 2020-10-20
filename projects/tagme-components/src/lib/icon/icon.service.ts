@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Injectable({
 	providedIn: 'root'
@@ -8,6 +8,7 @@ export class IconService {
 
 	/**
 	 * Injects the dom's sanitizer
+	 * 
 	 * @param sanitizer Sanitizer of content used here for html trusted
 	 */
 	constructor(private sanitizer: DomSanitizer) {}
@@ -22,11 +23,14 @@ export class IconService {
 	]);
 
 	/**
-	 * 
+	 * Get an icon with a color from the map
+	 *
 	 * @param iconName Key of the icon in the map
 	 * @param color Optional color to fill the icon
+	 * 
+	 * @returns {SafeHtml} SVG of the icon
 	 */
-	public getIcon(iconName: string, color: string = '#30323B') {
+	public getIcon(iconName: string, color: string = '#30323B'): SafeHtml {
 		return this.icons.has(iconName) 
 			? this.sanitizer.bypassSecurityTrustHtml(this.icons.get(iconName)(color))
 			: null;

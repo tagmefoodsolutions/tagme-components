@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { SafeHtml } from '@angular/platform-browser';
 import { IconService } from './icon.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class IconComponent {
 
 	/**
 	 * Injects the service of icons
-	 * @param iconService Service of icons
+	 * @param iconService Service for icons
 	 */
 	constructor(private iconService: IconService) {}
 
@@ -26,8 +27,10 @@ export class IconComponent {
 
 	/**
 	 * Gets the icon from the service
+	 * 
+	 * @returns {SafeHtml} SVG of the icon
 	 */
-	get icon() {
+	get icon(): SafeHtml {
 		return this.iconService.getIcon(this.name, this.color);
 	}
 }
