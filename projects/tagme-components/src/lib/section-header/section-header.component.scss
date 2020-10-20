@@ -1,0 +1,25 @@
+@import '../global.scss';
+
+$border: 1px solid $medium-gray;
+
+.section-header {
+	background-color: $light-gray;
+	border-bottom: $border;
+	border-top: $border;
+	padding: 5px;
+	text-align: center;
+
+	&__button {
+		display: inline-block;
+		margin-top: 8px;
+	}
+
+	&__subtitle {
+		font: $main-font-2x-light;
+		margin-top: 2px;
+	}
+
+	&__title {
+		font: $main-font-2x-semibold;
+	}
+}

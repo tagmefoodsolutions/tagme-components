@@ -2,6 +2,7 @@ import { BadgeComponent } from 'tagme-components'
 
 export default {
 	title: 'Badges',
+	component: BadgeComponent,
 	argTypes: {
 		backgroundColor: {
 			control: 'color'

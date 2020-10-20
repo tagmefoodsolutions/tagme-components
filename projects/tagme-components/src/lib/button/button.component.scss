@@ -4,7 +4,7 @@
 	border: none;
 	border-radius: 3px;
 	font: $main-font-2x-regular;
-	padding: 14px 0;
+	padding: 14px;
 	width: 100%;
 
 	&--main {
@@ -77,6 +77,6 @@
 	}
 
 	&--small {
-		padding: 6px 0;
+		padding: 6px;
 	}
 }

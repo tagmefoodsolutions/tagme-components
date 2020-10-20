@@ -28,3 +28,6 @@ export * from './lib/beer-badge/beer-badge.component';
 
 export * from './lib/country-badge/country-badge.module';
 export * from './lib/country-badge/country-badge.component';
+
+export * from './lib/section-header/section-header.module';
+export * from './lib/section-header/section-header.component';

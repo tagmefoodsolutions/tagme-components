@@ -1,0 +1,15 @@
+<div class="section-header">
+	<h1 class="section-header__title">{{ title }}</h1>
+	<h2 
+		class="section-header__subtitle"
+		*ngIf="subtitle"
+	>{{ subtitle }}</h2>
+	<tg-button
+		class="section-header__button"
+		(clickEmitter)="emitClickButton()"
+		*ngIf="hasButton"
+		[small]="true"
+		type="outline-main"
+		text="{{ buttonText }}"
+	></tg-button>
+</div>
