@@ -1,0 +1,34 @@
+.beer-badge {
+	border-radius: 50%;
+	display: inline-flex;
+	height: 14px;
+	width: 14px;
+
+	&--pilsen {
+		background-color: #FFBF43;
+	}
+
+	&--lager {
+		background-color: #F6C517;
+	}
+
+	&--weiss {
+		background-color: #F6A317;
+	}
+
+	&--pale-ale {
+		background-color: #E18726;
+	}
+
+	&--bock {
+		background-color: #8F2A00;
+	}
+
+	&--fruit-lambic {
+		background-color: #A82227;
+	}
+
+	&--black-stout {
+		background-color: #36080A;
+	}
+}
