@@ -8,8 +8,11 @@ export default {
 			control: {
 				type: 'inline-radio',
 				options: [
-					'plus_24',
+					'alcohol_48',
 					'minus_24',
+					'pin_24',
+					'pin_48',
+					'plus_24',
 					'trash_24'
 				]
 			}
