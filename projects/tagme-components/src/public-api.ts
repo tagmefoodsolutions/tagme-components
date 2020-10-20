@@ -19,3 +19,9 @@ export * from './lib/badge/badge.component';
 
 export * from './lib/nav/nav.module';
 export * from './lib/nav/nav.component';
+
+export * from './lib/wine-badge/wine-badge.module';
+export * from './lib/wine-badge/wine-badge.component';
+
+export * from './lib/beer-badge/beer-badge.module';
+export * from './lib/beer-badge/beer-badge.component';
