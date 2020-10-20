@@ -25,3 +25,6 @@ export * from './lib/wine-badge/wine-badge.component';
 
 export * from './lib/beer-badge/beer-badge.module';
 export * from './lib/beer-badge/beer-badge.component';
+
+export * from './lib/country-badge/country-badge.module';
+export * from './lib/country-badge/country-badge.component';
