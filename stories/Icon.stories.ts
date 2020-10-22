@@ -9,6 +9,8 @@ export default {
 				type: 'inline-radio',
 				options: [
 					'alcohol_48',
+					'back_24',
+					'grape_48',
 					'minus_24',
 					'pin_24',
 					'pin_48',
