@@ -11,7 +11,18 @@
 	[queryParams]="queryParams" 
 	[routerLink]="routerLink" 
 	[state]="state"
+	[style.color]="color"
 	[style]="customStyles"
 >
+	<tg-icon
+		class="link__icon link__icon--left"
+		color="{{ color }}"
+		name="{{ icon }}"
+		[ngClass]="{
+			'link__icon--left': iconPosition === 'left',
+			'link__icon--right': iconPosition === 'right'
+		}"
+		*ngIf="icon !== 'null' && type === 'button'"
+	></tg-icon>
 	{{ text }}
 </a>

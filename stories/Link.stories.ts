@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common'
 import { moduleMetadata } from '@storybook/angular'
 import { RouterModule } from '@angular/router';
 
-import { LinkComponent } from 'tagme-components'
+import { IconModule, LinkComponent } from 'tagme-components'
 
 export default {
 	title: 'Links',
@@ -11,6 +11,7 @@ export default {
 		moduleMetadata({
 			imports: [
 				CommonModule,
+				IconModule,
 				RouterModule.forRoot([], { useHash: true }),
       ]
 		})
@@ -27,7 +28,32 @@ export default {
 					'button',
 					'small-button'
 				]
+			},
+		},
+		icon: {
+			control: {
+				type: 'inline-radio',
+				options: [
+					'null',
+					'back_24',
+					'minus_24',
+					'pin_24',
+					'plus_24',
+					'trash_24'
+				]
 			}
+		},
+		iconPosition: {
+			control: {
+				type: 'inline-radio',
+				options: [
+					'left',
+					'right'
+				]
+			}
+		},
+		color: {
+			control: 'color'
 		}
 	}
 }
@@ -41,5 +67,7 @@ export const Default = Template.bind({})
 Default.args = {
 	text: 'Link',
   type: 'default',
-  routerLink: 'https://www.tagme.com.br'
+	routerLink: 'https://www.tagme.com.br',
+	iconPosition: 'left',
+	color: ''
 }
