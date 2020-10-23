@@ -1342,7 +1342,11 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "IconModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -1500,7 +1504,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/BeerBadge.stories.ts",
+                "file": "stories/Button.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1508,7 +1512,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
+                "file": "stories/BeerBadge.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1587,17 +1591,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/BeerBadge.stories.ts",
+                "file": "stories/Button.stories.ts",
                 "type": "",
-                "defaultValue": "(args: BeerBadgeComponent) => ({\n\tcomponent: BeerBadgeComponent,\n\tprops: args\n})"
+                "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Button.stories.ts",
+                "file": "stories/BeerBadge.stories.ts",
                 "type": "",
-                "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args\n})"
+                "defaultValue": "(args: BeerBadgeComponent) => ({\n\tcomponent: BeerBadgeComponent,\n\tprops: args\n})"
             },
             {
                 "name": "Template",
@@ -1695,24 +1699,6 @@
                     "defaultValue": "(args: BadgeComponent) => ({\n\tcomponent: BadgeComponent,\n\tprops: args,\n})"
                 }
             ],
-            "stories/BeerBadge.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/BeerBadge.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/BeerBadge.stories.ts",
-                    "type": "",
-                    "defaultValue": "(args: BeerBadgeComponent) => ({\n\tcomponent: BeerBadgeComponent,\n\tprops: args\n})"
-                }
-            ],
             "stories/Button.stories.ts": [
                 {
                     "name": "Default",
@@ -1729,6 +1715,24 @@
                     "file": "stories/Button.stories.ts",
                     "type": "",
                     "defaultValue": "(args: ButtonComponent) => ({\n  component: ButtonComponent,\n  props: args\n})"
+                }
+            ],
+            "stories/BeerBadge.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/BeerBadge.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/BeerBadge.stories.ts",
+                    "type": "",
+                    "defaultValue": "(args: BeerBadgeComponent) => ({\n\tcomponent: BeerBadgeComponent,\n\tprops: args\n})"
                 }
             ],
             "stories/Counter.stories.ts": [

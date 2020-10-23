@@ -68,6 +68,7 @@ Default.args = {
 	text: 'Link',
   type: 'default',
 	routerLink: 'https://www.tagme.com.br',
+	icon: 'null',
 	iconPosition: 'left',
-	color: ''
+	color: '#FF7F40'
 }
