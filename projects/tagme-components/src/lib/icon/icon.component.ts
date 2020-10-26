@@ -26,11 +26,16 @@ export class IconComponent {
 	@Input() color: string = '#30323B';
 
 	/**
+	 * Sets the size of the icon
+	 */
+	@Input() size: number = 24;
+
+	/**
 	 * Gets the icon from the service
 	 * 
 	 * @returns {SafeHtml} SVG of the icon
 	 */
 	get icon(): SafeHtml {
-		return this.iconService.getIcon(this.name, this.color);
+		return this.iconService.getIcon(this.name, this.color, this.size);
 	}
 }

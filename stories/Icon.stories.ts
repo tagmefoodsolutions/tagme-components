@@ -8,19 +8,21 @@ export default {
 			control: {
 				type: 'inline-radio',
 				options: [
-					'alcohol_48',
-					'back_24',
-					'grape_48',
-					'minus_24',
-					'pin_24',
-					'pin_48',
-					'plus_24',
-					'trash_24'
+					'alcohol',
+					'back',
+					'grape',
+					'minus',
+					'pin',
+					'plus',
+					'trash'
 				]
 			}
 		},
 		color: {
 			control: 'color'
+		},
+		size: {
+			control: 'number'
 		}
 	}
 }
@@ -32,6 +34,7 @@ const Template = (args: IconComponent) => ({
 
 export const Default = Template.bind({})
 Default.args = {
-	name: 'plus_24',
-	color: 'red'
+	name: 'alcohol',
+	color: 'red',
+	size: 24,
 }

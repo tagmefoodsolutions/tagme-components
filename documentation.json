@@ -690,7 +690,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".icon {\n\tdisplay: inline-flex;\n}",
+                    "data": ".icon {\n\talign-items: center;\n\tdisplay: inline-flex;\n\tjustify-content: center;\n\twidth: 100%;\n}",
                     "styleUrl": "./icon.component.scss"
                 }
             ],
@@ -1544,14 +1544,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Nav.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/Link.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
@@ -1560,7 +1552,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/WineBadge.stories.ts",
+                "file": "stories/Nav.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1569,6 +1561,14 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "stories/SectionHeader.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/WineBadge.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1631,14 +1631,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Nav.stories.ts",
-                "type": "",
-                "defaultValue": "(args: NavComponent) => ({\n\tcomponent: NavComponent,\n\tprops: args\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "stories/Link.stories.ts",
                 "type": "",
                 "defaultValue": "(args: LinkComponent) => ({\n\tcomponent: LinkComponent,\n\tprops: args\n})"
@@ -1647,9 +1639,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/WineBadge.stories.ts",
+                "file": "stories/Nav.stories.ts",
                 "type": "",
-                "defaultValue": "(args: WineBadgeComponent) => ({\n\tcomponent: WineBadgeComponent,\n\tprops: args\n})"
+                "defaultValue": "(args: NavComponent) => ({\n\tcomponent: NavComponent,\n\tprops: args\n})"
             },
             {
                 "name": "Template",
@@ -1658,6 +1650,14 @@
                 "file": "stories/SectionHeader.stories.ts",
                 "type": "",
                 "defaultValue": "(args: SectionHeaderComponent) => ({\n\tcomponent: SectionHeaderComponent,\n\tprops: args\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/WineBadge.stories.ts",
+                "type": "",
+                "defaultValue": "(args: WineBadgeComponent) => ({\n\tcomponent: WineBadgeComponent,\n\tprops: args\n})"
             }
         ],
         "functions": [],
@@ -1789,24 +1789,6 @@
                     "defaultValue": "(args: IconComponent) => ({\n\tcomponent: IconComponent,\n\tprops: args\n})"
                 }
             ],
-            "stories/Nav.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Nav.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Nav.stories.ts",
-                    "type": "",
-                    "defaultValue": "(args: NavComponent) => ({\n\tcomponent: NavComponent,\n\tprops: args\n})"
-                }
-            ],
             "stories/Link.stories.ts": [
                 {
                     "name": "Default",
@@ -1825,12 +1807,12 @@
                     "defaultValue": "(args: LinkComponent) => ({\n\tcomponent: LinkComponent,\n\tprops: args\n})"
                 }
             ],
-            "stories/WineBadge.stories.ts": [
+            "stories/Nav.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/WineBadge.stories.ts",
+                    "file": "stories/Nav.stories.ts",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -1838,9 +1820,9 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "stories/WineBadge.stories.ts",
+                    "file": "stories/Nav.stories.ts",
                     "type": "",
-                    "defaultValue": "(args: WineBadgeComponent) => ({\n\tcomponent: WineBadgeComponent,\n\tprops: args\n})"
+                    "defaultValue": "(args: NavComponent) => ({\n\tcomponent: NavComponent,\n\tprops: args\n})"
                 }
             ],
             "stories/SectionHeader.stories.ts": [
@@ -1859,6 +1841,24 @@
                     "file": "stories/SectionHeader.stories.ts",
                     "type": "",
                     "defaultValue": "(args: SectionHeaderComponent) => ({\n\tcomponent: SectionHeaderComponent,\n\tprops: args\n})"
+                }
+            ],
+            "stories/WineBadge.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/WineBadge.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/WineBadge.stories.ts",
+                    "type": "",
+                    "defaultValue": "(args: WineBadgeComponent) => ({\n\tcomponent: WineBadgeComponent,\n\tprops: args\n})"
                 }
             ]
         },
