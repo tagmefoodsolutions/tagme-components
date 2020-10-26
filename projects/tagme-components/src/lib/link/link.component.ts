@@ -66,4 +66,9 @@ export class LinkComponent {
 	 * (Optional) Sets a color for text and icon with a hex
 	 */
 	@Input() color?: string;
+
+	/**
+	 * (Optional) Sets the size of the icon
+	 */
+	@Input() iconSize?: number = 18;
 }

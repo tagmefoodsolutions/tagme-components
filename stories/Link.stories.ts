@@ -35,11 +35,11 @@ export default {
 				type: 'inline-radio',
 				options: [
 					'null',
-					'back_24',
-					'minus_24',
-					'pin_24',
-					'plus_24',
-					'trash_24'
+					'back',
+					'minus',
+					'pin',
+					'plus',
+					'trash'
 				]
 			}
 		},
@@ -54,6 +54,9 @@ export default {
 		},
 		color: {
 			control: 'color'
+		},
+		iconSize: {
+			control: 'number'
 		}
 	}
 }
@@ -70,5 +73,6 @@ Default.args = {
 	routerLink: 'https://www.tagme.com.br',
 	icon: 'null',
 	iconPosition: 'left',
-	color: '#FF7F40'
+	color: '#FF7F40',
+	iconSize: 18,
 }
