@@ -17,6 +17,9 @@ export default {
 					'black-stout'
 				]
 			}
+		},
+		size: {
+			control: 'number'
 		}
 	}
 }
@@ -28,5 +31,6 @@ const Template = (args: BeerBadgeComponent) => ({
 
 export const Default = Template.bind({})
 Default.args = {
-	type: 'pilsen'
+	type: 'pilsen',
+	size: 14,
 }

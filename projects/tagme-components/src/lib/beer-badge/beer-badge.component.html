@@ -1,1 +1,7 @@
-<div class="beer-badge beer-badge--{{ type }}"></div>
+<div
+	class="beer-badge beer-badge--{{ type }}"
+	[ngStyle]="{
+		'height.px': size,
+		'width.px': size
+	}"
+></div>

@@ -19,4 +19,9 @@ export class BeerBadgeComponent {
 	 * - black-stout
 	 */
 	@Input() type: string;
+
+	/**
+	 * Size of the badge
+	 */
+	@Input() size: number = 14;
 }
