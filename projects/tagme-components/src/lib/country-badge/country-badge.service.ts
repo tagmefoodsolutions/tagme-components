@@ -81,11 +81,11 @@ export class CountryBadgeService {
 	 * 
 	 * @returns {SafeHtml} SVG of the badge
 	 */
-	public getBadge(badgeName: string): SafeHtml {
+	public getBadge(badgeName: string, badgeSize: number): SafeHtml {
 		return this.badges.has(badgeName) 
 			? this.sanitizer.bypassSecurityTrustHtml(
 					`
-						<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<svg width="${badgeSize}" height="${badgeSize}" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 							${this.badges.get(badgeName)}
 						</svg>
 					`

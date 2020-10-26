@@ -65,6 +65,11 @@ export default {
 					'venezuela'
 				]
 			}
+		},
+		size: {
+			control: {
+				type: 'number'
+			}
 		}
 	}
 }
@@ -76,5 +81,6 @@ const Template = (args: CountryBadgeComponent) => ({
 
 export const Default = Template.bind({})
 Default.args = {
-	country: 'south-africa'
+	country: 'south-africa',
+	size: 14,
 }

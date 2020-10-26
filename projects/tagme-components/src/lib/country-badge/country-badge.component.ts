@@ -10,6 +10,11 @@ import { CountryBadgeService } from './country-badge.service';
 export class CountryBadgeComponent {
 
 	/**
+	 * Sets the size of the badge
+	 */
+	@Input() size: number = 14;
+
+	/**
 	 * Injects the dependencies
 	 * 
 	 * @param countryBadgeService Service for badges of countries
@@ -85,6 +90,6 @@ export class CountryBadgeComponent {
 	 * @returns {SafeHtml} SVG of the badge
 	 */
 	get badge(): SafeHtml {
-		return this.countryBadgeService.getBadge(this.country);
+		return this.countryBadgeService.getBadge(this.country, this.size);
 	}
 }
