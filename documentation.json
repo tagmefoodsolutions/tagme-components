@@ -1107,7 +1107,7 @@
         },
         {
             "name": "WineBadgeComponent",
-            "id": "component-WineBadgeComponent-18bf92a0ef425b89f40848e751a876af",
+            "id": "component-WineBadgeComponent-c8f49d24221f07e46c05ab193ac63962",
             "file": "projects/tagme-components/src/lib/wine-badge/wine-badge.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1125,6 +1125,13 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "size",
+                    "defaultValue": "14",
+                    "description": "<p>Size of the badge</p>\n",
+                    "line": 33,
+                    "type": "number"
+                },
+                {
                     "name": "type",
                     "description": "<p>Type of wine.\nIt can be:</p>\n<ul>\n<li>white</li>\n<li>sweet-red</li>\n<li>porto</li>\n<li>fortified-red</li>\n<li>white-porto</li>\n<li>sweet-white</li>\n<li>fortified-white</li>\n<li>jerez</li>\n<li>madeira</li>\n<li>rose</li>\n<li>red</li>\n<li>sparkling</li>\n<li>champagne</li>\n<li>distilled-grape</li>\n</ul>\n",
                     "line": 28,
@@ -1139,16 +1146,16 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n\tselector: 'tg-wine-badge',\n\ttemplateUrl: './wine-badge.component.html',\n\tstyleUrls: ['./wine-badge.component.scss'],\n})\nexport class WineBadgeComponent {\n\t/**\n\t * Type of wine.\n\t * It can be:\n\t * \n\t * - white\n\t * - sweet-red\n\t * - porto\n\t * - fortified-red\n\t * - white-porto\n\t * - sweet-white\n\t * - fortified-white\n\t * - jerez\n\t * - madeira\n\t * - rose\n\t * - red\n\t * - sparkling\n\t * - champagne\n\t * - distilled-grape\n\t */\n\t@Input() type: string;\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n\tselector: 'tg-wine-badge',\n\ttemplateUrl: './wine-badge.component.html',\n\tstyleUrls: ['./wine-badge.component.scss'],\n})\nexport class WineBadgeComponent {\n\t/**\n\t * Type of wine.\n\t * It can be:\n\t * \n\t * - white\n\t * - sweet-red\n\t * - porto\n\t * - fortified-red\n\t * - white-porto\n\t * - sweet-white\n\t * - fortified-white\n\t * - jerez\n\t * - madeira\n\t * - rose\n\t * - red\n\t * - sparkling\n\t * - champagne\n\t * - distilled-grape\n\t */\n\t@Input() type: string;\n\n\t/**\n\t * Size of the badge\n\t */\n\t@Input() size: number = 14;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wine-badge {\n\tborder-radius: 50%;\n\tdisplay: inline-flex;\n\theight: 14px;\n\twidth: 14px;\n\n\t&--white {\n\t\tbackground-color: #E6E2A0;\n\t}\n\n\t&--sweet-red {\n\t\tbackground-color: #730207;\n\t}\n\n\t&--porto {\n\t\tbackground-color: #970518;\n\t}\n\n\t&--fortified-red {\n\t\tbackground-color: #970518;\n\t}\n\t\n\t&--white-porto {\n\t\tbackground-color: #A2884A;\n\t}\n\n\t&--sweet-white {\n\t\tbackground-color: #C1A460;\n\t}\n\n\t&--fortified-white {\n\t\tbackground-color: #AC8B3E;\n\t}\n\n\t&--jerez {\n\t\tbackground-color: #E8803B;\n\t}\n\n\t&--madeira {\n\t\tbackground-color: #BF6327;\n\t}\n\n\t&--rose {\n\t\tbackground-color: #FF676C;\n\t}\n\n\t&--red {\n\t\tbackground-color: #BC075E;\n\t}\n\n\t&--sparkling {\n\t\tbackground-color: #D6D565;\n\t}\n\n\t&--champagne {\n\t\tbackground-color: #E9E884;\n\t}\n\n\t&--distilled-grape {\n\t\tbackground-color: #E8BED6;\n\t}\n}",
+                    "data": ".wine-badge {\n\tborder-radius: 50%;\n\tdisplay: inline-flex;\n\n\t&--white {\n\t\tbackground-color: #E6E2A0;\n\t}\n\n\t&--sweet-red {\n\t\tbackground-color: #730207;\n\t}\n\n\t&--porto {\n\t\tbackground-color: #970518;\n\t}\n\n\t&--fortified-red {\n\t\tbackground-color: #970518;\n\t}\n\t\n\t&--white-porto {\n\t\tbackground-color: #A2884A;\n\t}\n\n\t&--sweet-white {\n\t\tbackground-color: #C1A460;\n\t}\n\n\t&--fortified-white {\n\t\tbackground-color: #AC8B3E;\n\t}\n\n\t&--jerez {\n\t\tbackground-color: #E8803B;\n\t}\n\n\t&--madeira {\n\t\tbackground-color: #BF6327;\n\t}\n\n\t&--rose {\n\t\tbackground-color: #FF676C;\n\t}\n\n\t&--red {\n\t\tbackground-color: #BC075E;\n\t}\n\n\t&--sparkling {\n\t\tbackground-color: #D6D565;\n\t}\n\n\t&--champagne {\n\t\tbackground-color: #E9E884;\n\t}\n\n\t&--distilled-grape {\n\t\tbackground-color: #E8BED6;\n\t}\n}",
                     "styleUrl": "./wine-badge.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"wine-badge wine-badge--{{ type }}\"></div>"
+            "templateData": "<div\n\tclass=\"wine-badge wine-badge--{{ type }}\"\n\t[ngStyle]=\"{\n\t\t'height.px': size,\n\t\t'width.px': size\n\t}\"\n></div>"
         }
     ],
     "modules": [
@@ -1589,7 +1596,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/CountryBadge.stories.ts",
+                "file": "stories/Icon.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1597,7 +1604,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Icon.stories.ts",
+                "file": "stories/CountryBadge.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1676,17 +1683,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/CountryBadge.stories.ts",
+                "file": "stories/Icon.stories.ts",
                 "type": "",
-                "defaultValue": "(args: CountryBadgeComponent) => ({\n\tcomponent: CountryBadgeComponent,\n\tprops: args\n})"
+                "defaultValue": "(args: IconComponent) => ({\n\tcomponent: IconComponent,\n\tprops: args\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Icon.stories.ts",
+                "file": "stories/CountryBadge.stories.ts",
                 "type": "",
-                "defaultValue": "(args: IconComponent) => ({\n\tcomponent: IconComponent,\n\tprops: args\n})"
+                "defaultValue": "(args: CountryBadgeComponent) => ({\n\tcomponent: CountryBadgeComponent,\n\tprops: args\n})"
             },
             {
                 "name": "Template",
@@ -1814,24 +1821,6 @@
                     "defaultValue": "(args: CounterComponent) => ({\n\tcomponent: CounterComponent,\n\tprops: args\n})"
                 }
             ],
-            "stories/CountryBadge.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/CountryBadge.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/CountryBadge.stories.ts",
-                    "type": "",
-                    "defaultValue": "(args: CountryBadgeComponent) => ({\n\tcomponent: CountryBadgeComponent,\n\tprops: args\n})"
-                }
-            ],
             "stories/Icon.stories.ts": [
                 {
                     "name": "Default",
@@ -1848,6 +1837,24 @@
                     "file": "stories/Icon.stories.ts",
                     "type": "",
                     "defaultValue": "(args: IconComponent) => ({\n\tcomponent: IconComponent,\n\tprops: args\n})"
+                }
+            ],
+            "stories/CountryBadge.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/CountryBadge.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/CountryBadge.stories.ts",
+                    "type": "",
+                    "defaultValue": "(args: CountryBadgeComponent) => ({\n\tcomponent: CountryBadgeComponent,\n\tprops: args\n})"
                 }
             ],
             "stories/Link.stories.ts": [
@@ -1929,7 +1936,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 21,
+        "count": 22,
         "status": "low",
         "files": [
             {
@@ -2036,9 +2043,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "WineBadgeComponent",
-                "coveragePercent": 50,
-                "coverageCount": "1/2",
-                "status": "medium"
+                "coveragePercent": 66,
+                "coverageCount": "2/3",
+                "status": "good"
             },
             {
                 "filePath": "projects/tagme-components/src/test.ts",
