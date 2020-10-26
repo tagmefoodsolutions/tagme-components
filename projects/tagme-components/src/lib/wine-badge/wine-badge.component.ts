@@ -26,4 +26,9 @@ export class WineBadgeComponent {
 	 * - distilled-grape
 	 */
 	@Input() type: string;
+
+	/**
+	 * Size of the badge
+	 */
+	@Input() size: number = 14;
 }

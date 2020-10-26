@@ -24,6 +24,9 @@ export default {
 					'distilled-grape'
 				]
 			}
+		},
+		size: {
+			control: 'number'
 		}
 	}
 }
@@ -35,5 +38,6 @@ const Template = (args: WineBadgeComponent) => ({
 
 export const Default = Template.bind({})
 Default.args = {
-	type: 'white'
+	type: 'white',
+	size: 14
 }
