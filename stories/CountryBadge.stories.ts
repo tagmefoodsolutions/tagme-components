@@ -67,9 +67,7 @@ export default {
 			}
 		},
 		size: {
-			control: {
-				type: 'number'
-			}
+			control: 'number'
 		}
 	}
 }
