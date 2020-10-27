@@ -1596,7 +1596,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Icon.stories.ts",
+                "file": "stories/CountryBadge.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1604,7 +1604,7 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/CountryBadge.stories.ts",
+                "file": "stories/Icon.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -1683,17 +1683,17 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/Icon.stories.ts",
+                "file": "stories/CountryBadge.stories.ts",
                 "type": "",
-                "defaultValue": "(args: IconComponent) => ({\n\tcomponent: IconComponent,\n\tprops: args\n})"
+                "defaultValue": "(args: CountryBadgeComponent) => ({\n\tcomponent: CountryBadgeComponent,\n\tprops: args\n})"
             },
             {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "stories/CountryBadge.stories.ts",
+                "file": "stories/Icon.stories.ts",
                 "type": "",
-                "defaultValue": "(args: CountryBadgeComponent) => ({\n\tcomponent: CountryBadgeComponent,\n\tprops: args\n})"
+                "defaultValue": "(args: IconComponent) => ({\n\tcomponent: IconComponent,\n\tprops: args\n})"
             },
             {
                 "name": "Template",
@@ -1821,24 +1821,6 @@
                     "defaultValue": "(args: CounterComponent) => ({\n\tcomponent: CounterComponent,\n\tprops: args\n})"
                 }
             ],
-            "stories/Icon.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Icon.stories.ts",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Icon.stories.ts",
-                    "type": "",
-                    "defaultValue": "(args: IconComponent) => ({\n\tcomponent: IconComponent,\n\tprops: args\n})"
-                }
-            ],
             "stories/CountryBadge.stories.ts": [
                 {
                     "name": "Default",
@@ -1855,6 +1837,24 @@
                     "file": "stories/CountryBadge.stories.ts",
                     "type": "",
                     "defaultValue": "(args: CountryBadgeComponent) => ({\n\tcomponent: CountryBadgeComponent,\n\tprops: args\n})"
+                }
+            ],
+            "stories/Icon.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Icon.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/Icon.stories.ts",
+                    "type": "",
+                    "defaultValue": "(args: IconComponent) => ({\n\tcomponent: IconComponent,\n\tprops: args\n})"
                 }
             ],
             "stories/Link.stories.ts": [
