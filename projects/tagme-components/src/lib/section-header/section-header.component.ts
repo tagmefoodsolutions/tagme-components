@@ -6,6 +6,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 	styleUrls: ['./section-header.component.scss']
 })
 export class SectionHeaderComponent {
+  /**
+	 * Type of navigation.
+	 * It can be:
+	 *
+	 * default
+	 * subheader
+	 */
+	@Input() type: string = 'default';
+
 	/**
 	 * Sets the title of the section
 	 */
