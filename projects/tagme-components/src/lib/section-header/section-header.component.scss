@@ -21,4 +21,9 @@ $border: 1px solid $medium-gray;
 	&__title {
 		font: $main-font-2x-semibold;
 	}
+
+  &--subheader {
+    background-color: $white;
+    border-top: 0;
+  }
 }

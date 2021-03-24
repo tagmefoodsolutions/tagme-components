@@ -14,6 +14,13 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+## Running Storybook
+
+Run `ng build tagme-components --prod` to build the project. 
+Copy `dist/tagme-components` folder to `node_modules/` replacing the existent if exists. 
+Run `npm run storybook`.
+Navigate to `http://localhost:6006/`
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).

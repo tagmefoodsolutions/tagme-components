@@ -10,7 +10,18 @@ export default {
 			declarations: [ButtonComponent],
 			imports: [CommonModule]
 		})
-	]
+	],
+  argTypes: {
+		type: {
+			control: {
+				type: 'select',
+				options: [
+					'default',
+					'subheader'
+				]
+			}
+		}
+	}
 }
 
 const Template = (args: SectionHeaderComponent) => ({
@@ -23,5 +34,6 @@ Default.args = {
 	title: 'Title title title',
 	subtitle: 'Subtitle subtitle subtitle subtitle',
 	buttonText: 'Ver toda a carta de vinhos',
-	hasButton: false
+	hasButton: false,
+  type: 'default'
 }
