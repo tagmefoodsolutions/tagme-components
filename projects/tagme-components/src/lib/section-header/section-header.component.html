@@ -2,7 +2,12 @@
   class="section-header"
   [ngClass]="{
     'section-header--subheader': type === 'subheader'
-  }">
+  }"
+	[ngStyle]="{
+		'background-color': backgroundColor,
+		'border-color': borderColor
+	}"
+>
 	<h1 class="section-header__title">{{ title }}</h1>
   <h2
 		class="section-header__subtitle"

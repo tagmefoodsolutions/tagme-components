@@ -36,6 +36,16 @@ export class SectionHeaderComponent {
 	@Input() buttonText?: string;
 
 	/**
+	 *  (Optional) Sets the background color
+	 */
+	@Input() backgroundColor?: string;
+
+	/**
+	 *  (Optional) Sets the border color
+	 */
+	 @Input() borderColor?: string;
+
+	/**
 	 * Emitter of the click in the button
 	 */
 	@Output() buttonClickEmitter: EventEmitter<null> = new EventEmitter<null>();

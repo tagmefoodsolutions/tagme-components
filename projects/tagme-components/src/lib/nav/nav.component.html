@@ -9,5 +9,9 @@
 			'nav__item--borderless': type == 'borderless',
 			'nav__item--borderless--active': type == 'borderless' && item.active
 		}"
+		[ngStyle]="{
+			'border-color': borderColor,
+			'border-bottom-color': item.active ? activeBorderColor : '' 
+		}"
 	>{{ item.text }}</div>
 </nav>

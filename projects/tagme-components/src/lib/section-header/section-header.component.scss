@@ -1,11 +1,8 @@
 @import '../global.scss';
 
-$border: 1px solid $medium-gray;
-
 .section-header {
 	background-color: $light-gray;
-	border-bottom: $border;
-	border-top: $border;
+	border-bottom: 1px solid $medium-gray;
 	padding: 5px;
 
 	&__button {

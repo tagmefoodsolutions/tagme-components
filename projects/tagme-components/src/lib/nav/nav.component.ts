@@ -32,6 +32,16 @@ export class NavComponent {
 	];
 
 	/**
+	 * (Optional) Sets the color of the border
+	 */
+	@Input() borderColor?: string;
+
+	/**
+	 * (Optional) Sets the color of the border in the active item
+	 */
+	@Input() activeBorderColor?: string;
+
+	/**
 	 * Emitter of the item clicked
 	 */
 	@Output() itemEmitter: EventEmitter<string> = new EventEmitter<string>();
