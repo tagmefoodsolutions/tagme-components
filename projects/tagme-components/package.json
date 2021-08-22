@@ -1,6 +1,6 @@
 {
   "name": "tagme-components",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "peerDependencies": {
     "@angular/common": "^10.1.4",
     "@angular/core": "^10.1.4"
