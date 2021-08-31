@@ -6,7 +6,9 @@
 		'link--small': type === 'small' || type === 'small-underline',
 		'link--small--underline': type === 'small-underline',
 		'link--button': type === 'button' || type === 'small-button',
-		'link--button--small': type === 'small-button'
+		'link--button--small': type === 'small-button',
+		'link__icon--left': (icon !== 'null' && type === 'button') && iconPosition === 'left',
+		'link__icon--right': (icon !== 'null' && type === 'button') && iconPosition === 'right'
 	}"
 	[queryParams]="queryParams" 
 	[routerLink]="routerLink" 
@@ -18,12 +20,8 @@
 		class="link__icon link__icon--left"
 		color="{{ color }}"
 		name="{{ icon }}"
-		[ngClass]="{
-			'link__icon--left': iconPosition === 'left',
-			'link__icon--right': iconPosition === 'right'
-		}"
 		*ngIf="icon !== 'null' && type === 'button'"
 		size="{{ iconSize }}"
 	></tg-icon>
-	{{ text }}
+	<span class="link__text">{{ text }}</span>
 </a>
