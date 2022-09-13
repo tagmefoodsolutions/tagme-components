@@ -1,5 +1,5 @@
 {
-  "name": "tagme-components",
+  "name": "@tagmedev/tagme-components",
   "version": "0.2.0",
   "scripts": {
     "ng": "ng",
@@ -7,9 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:ivy": "ng build tagme-components --configuration=ivy"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.11",
     "@angular/common": "~13.3.11",
