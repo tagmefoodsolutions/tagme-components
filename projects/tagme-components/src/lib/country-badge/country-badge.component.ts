@@ -16,7 +16,7 @@ export class CountryBadgeComponent {
 
 	/**
 	 * Injects the dependencies
-	 * 
+	 *
 	 * @param countryBadgeService Service for badges of countries
 	 */
 	constructor(private countryBadgeService: CountryBadgeService) {}
@@ -24,7 +24,7 @@ export class CountryBadgeComponent {
 	/**
 	 * Sets the name of the country
 	 * It can be:
-	 * 
+	 *
 	 * - south-africa
 	 * - germany
 	 * - argentina
@@ -61,9 +61,10 @@ export class CountryBadgeComponent {
 	 * - jamaica
 	 * - japan
 	 * - lebanon
-	 * - malta
+   * - malta
 	 * - marocco
 	 * - mexico
+   * - north-macedonia
 	 * - norway
 	 * - new-zeland
 	 * - peru
@@ -86,7 +87,7 @@ export class CountryBadgeComponent {
 
 	/**
 	 * Gets the badge from the service
-	 * 
+	 *
 	 * @returns {SafeHtml} SVG of the badge
 	 */
 	get badge(): SafeHtml {

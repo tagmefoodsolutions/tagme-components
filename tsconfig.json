@@ -21,5 +21,8 @@
         "dist/tagme-components"
       ]
     }
+  },
+  "angularCompilerOptions": {
+    "enableIvy": false
   }
 }

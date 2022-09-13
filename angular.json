@@ -18,6 +18,9 @@
           "configurations": {
             "production": {
               "tsConfig": "projects/tagme-components/tsconfig.lib.prod.json"
+            },
+            "ivy": {
+              "tsConfig": "projects/tagme-components/tsconfig.lib.ivy.json"
             }
           }
         },
