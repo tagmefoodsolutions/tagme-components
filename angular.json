@@ -49,6 +49,5 @@
   },
   "cli": {
     "analytics": "05472f22-59af-4e93-8a9b-9d1c9e09999b"
-  },
-  "defaultProject": "tagme-components"
+  }
 }
