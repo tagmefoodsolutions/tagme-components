@@ -85,6 +85,7 @@ export class CountryBadgeComponent {
    * - slovakia
    * - kosovo
    * - moldavia
+   * - armenia
    */
   @Input() country: string;
 
